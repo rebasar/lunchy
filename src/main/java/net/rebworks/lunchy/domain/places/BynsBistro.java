@@ -1,0 +1,50 @@
+package net.rebworks.lunchy.domain.places;
+
+import net.rebworks.lunchy.domain.Place;
+import net.rebworks.lunchy.resources.LunchResource;
+
+import javax.inject.Inject;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.UriInfo;
+import java.net.URI;
+import java.util.Arrays;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+import static net.rebworks.lunchy.util.Util.toUri;
+
+public class BynsBistro implements Place {
+
+    private static final TreeSet<String> ALIASES = new TreeSet<>(Arrays.asList("byns", "bynsbistro"));
+    public static final String NAME = ALIASES.first();
+    final UriInfo uriInfo;
+
+    @Inject
+    public BynsBistro(@Context final UriInfo uriInfo) {
+        this.uriInfo = uriInfo;
+    }
+
+    @Override
+    public String getName() {
+        return "Byns Bistro";
+    }
+
+    @Override
+    public SortedSet<String> getAliases() {
+        return ALIASES;
+    }
+
+    @Override
+    public URI getWebsite() {
+        return toUri("http://www.bynsbistro.nu/veckans-lunch.aspx");
+    }
+
+    @Override
+    public URI getUri() {
+        return uriInfo.getRequestUriBuilder()
+                      .path(LunchResource.class, "getPlace")
+                      .resolveTemplate("place", NAME)
+                      .build();
+    }
+
+}

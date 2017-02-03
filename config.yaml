@@ -1,0 +1,2 @@
+jerseyClient:
+  timeout: 2000ms
