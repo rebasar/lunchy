@@ -1,7 +1,6 @@
 package net.rebworks.lunchy.domain.places;
 
 import net.rebworks.lunchy.domain.Place;
-import net.rebworks.lunchy.domain.date.DateCalculator;
 import net.rebworks.lunchy.resources.LunchResource;
 
 import javax.inject.Inject;
@@ -53,6 +52,7 @@ public class TacosAndTequila implements Place {
 
     @Override
     public LocalDateTime getExpiry(final LocalDateTime dateTime) {
-        return new DateCalculator(dateTime.toLocalDate()).getEndOfWeek().plusDays(1).atStartOfDay();
+        // Tacos seems be updating their menu on Monday morning
+        return Place.super.getExpiry(dateTime).plusHours(8);
     }
 }
