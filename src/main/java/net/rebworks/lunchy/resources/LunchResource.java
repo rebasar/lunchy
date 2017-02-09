@@ -12,6 +12,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.UriInfo;
+import java.net.URI;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -45,5 +47,12 @@ public class LunchResource {
     @Path("{place}")
     public Optional<Lunch> getPlace(@PathParam("place") final String place) {
         return parserService.getLunches(place).forDate(LocalDate.now());
+    }
+
+    public static URI getPlaceURI(final UriInfo uriInfo, final String place) {
+        return uriInfo.getRequestUriBuilder()
+                      .path(LunchResource.class, "getPlace")
+                      .resolveTemplate("place", place)
+                      .build();
     }
 }

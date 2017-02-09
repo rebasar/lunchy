@@ -11,8 +11,6 @@ import java.util.Arrays;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import static net.rebworks.lunchy.util.Util.toUri;
-
 public class Barabicu implements Place {
 
     public static final String NAME = "barabicu";
@@ -37,15 +35,12 @@ public class Barabicu implements Place {
 
     @Override
     public URI getWebsite() {
-        return toUri("http://barabicu.se");
+        return URI.create("http://barabicu.se");
     }
 
     @Override
     public URI getUri() {
-        return uriInfo.getRequestUriBuilder()
-                      .path(LunchResource.class, "getPlace")
-                      .resolveTemplate("place", NAME)
-                      .build();
+        return LunchResource.getPlaceURI(uriInfo, NAME);
     }
 
 }

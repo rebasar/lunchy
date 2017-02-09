@@ -11,8 +11,6 @@ import java.util.Collections;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import static net.rebworks.lunchy.util.Util.toUri;
-
 public class Silvis implements Place {
 
     private static final TreeSet<String> ALIASES = new TreeSet<>(Collections.singletonList("silvis"));
@@ -36,14 +34,12 @@ public class Silvis implements Place {
 
     @Override
     public URI getWebsite() {
-        return toUri("http://www.restaurangguiden.com/sv/silvis/lunch");
+        return URI.create("http://www.restaurangguiden.com/sv/silvis/lunch");
     }
 
     @Override
     public URI getUri() {
-        return uriInfo.getRequestUriBuilder()
-                      .path(LunchResource.class, "getPlace")
-                      .resolveTemplate("place", NAME).build();
+        return LunchResource.getPlaceURI(uriInfo, NAME);
     }
 
 }

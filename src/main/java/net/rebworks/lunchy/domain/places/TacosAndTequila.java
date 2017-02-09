@@ -11,8 +11,6 @@ import java.util.Arrays;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import static net.rebworks.lunchy.util.Util.toUri;
-
 public class TacosAndTequila implements Place {
 
     private static final TreeSet<String> ALIASES = new TreeSet<>(Arrays.asList("tnt",
@@ -39,15 +37,12 @@ public class TacosAndTequila implements Place {
 
     @Override
     public URI getWebsite() {
-        return toUri("https://www.tacosandtequila.se/");
+        return URI.create("https://www.tacosandtequila.se/");
     }
 
     @Override
     public URI getUri() {
-        return uriInfo.getRequestUriBuilder()
-                      .path(LunchResource.class, "getPlace")
-                      .resolveTemplate("place", NAME)
-                      .build();
+        return LunchResource.getPlaceURI(uriInfo, NAME);
     }
 
     @Override
