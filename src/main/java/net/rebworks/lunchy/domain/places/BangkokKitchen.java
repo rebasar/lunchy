@@ -25,7 +25,7 @@ public class BangkokKitchen implements Place {
 
     @Override
     public String getName() {
-        return NAME;
+        return "Bangkok Kitchen";
     }
 
     @Override
