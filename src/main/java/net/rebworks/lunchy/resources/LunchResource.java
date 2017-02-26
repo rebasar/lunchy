@@ -24,7 +24,8 @@ import java.util.stream.StreamSupport;
 import static java.util.stream.Collectors.toList;
 
 @Path("/")
-@Produces(MediaType.APPLICATION_JSON)
+// This is a disgrace but couldn't find any other way of setting charset in Jersey
+@Produces(MediaType.APPLICATION_JSON+";charset=utf-8")
 public class LunchResource {
 
     private final ParserService parserService;
