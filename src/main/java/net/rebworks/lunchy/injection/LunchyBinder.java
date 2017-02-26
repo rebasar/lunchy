@@ -6,6 +6,7 @@ import net.rebworks.lunchy.domain.Parser;
 import net.rebworks.lunchy.domain.Place;
 import net.rebworks.lunchy.domain.date.DateCalculator;
 import net.rebworks.lunchy.domain.io.HttpClient;
+import net.rebworks.lunchy.domain.places.BangkokKitchen;
 import net.rebworks.lunchy.domain.places.Barabicu;
 import net.rebworks.lunchy.domain.places.BynsBistro;
 import net.rebworks.lunchy.domain.places.Silvis;
@@ -53,6 +54,7 @@ public class LunchyBinder extends AbstractBinder {
         bind(net.rebworks.lunchy.domain.parsers.TacosAndTequila.class).named(TacosAndTequila.NAME).to(Parser.class);
         bind(net.rebworks.lunchy.domain.parsers.Silvis.class).named(Silvis.NAME).to(Parser.class);
         bind(net.rebworks.lunchy.domain.parsers.BynsBistro.class).named(BynsBistro.NAME).to(Parser.class);
+        bind(net.rebworks.lunchy.domain.parsers.BangkokKitchen.class).named(BangkokKitchen.NAME).to(Parser.class);
     }
 
     private void bindPlaces() {
@@ -60,5 +62,6 @@ public class LunchyBinder extends AbstractBinder {
         bind(TacosAndTequila.class).named(TacosAndTequila.NAME).to(Place.class);
         bind(Silvis.class).named(Silvis.NAME).to(Place.class);
         bind(BynsBistro.class).named(BynsBistro.NAME).to(Place.class);
+        bind(BangkokKitchen.class).named(BangkokKitchen.NAME).to(Place.class);
     }
 }
