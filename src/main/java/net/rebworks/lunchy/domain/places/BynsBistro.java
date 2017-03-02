@@ -34,7 +34,7 @@ public class BynsBistro implements Place {
 
     @Override
     public URI getWebsite() {
-        return URI.create("http://www.bynsbistro.nu/veckans-lunch.aspx");
+        return URI.create("https://www.bynsbistro.se/menyer");
     }
 
     @Override
