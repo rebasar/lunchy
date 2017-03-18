@@ -6,6 +6,7 @@ import net.rebworks.lunchy.domain.Parser;
 import net.rebworks.lunchy.domain.Place;
 import net.rebworks.lunchy.domain.date.DateCalculator;
 import net.rebworks.lunchy.domain.io.HttpClient;
+import net.rebworks.lunchy.domain.places.AHerefordBeefstouw;
 import net.rebworks.lunchy.domain.places.BangkokKitchen;
 import net.rebworks.lunchy.domain.places.Barabicu;
 import net.rebworks.lunchy.domain.places.Kok17;
@@ -55,6 +56,8 @@ public class LunchyBinder extends AbstractBinder {
         bind(net.rebworks.lunchy.domain.parsers.Silvis.class).named(Silvis.NAME).to(Parser.class);
         bind(net.rebworks.lunchy.domain.parsers.BangkokKitchen.class).named(BangkokKitchen.NAME).to(Parser.class);
         bind(net.rebworks.lunchy.domain.parsers.Kok17.class).named(Kok17.NAME).to(Parser.class);
+        bind(net.rebworks.lunchy.domain.parsers.AHerefordBeefstouw.class).named(AHerefordBeefstouw.NAME)
+                                                                         .to(Parser.class);
     }
 
     private void bindPlaces() {
@@ -63,5 +66,6 @@ public class LunchyBinder extends AbstractBinder {
         bind(Silvis.class).named(Silvis.NAME).to(Place.class);
         bind(BangkokKitchen.class).named(BangkokKitchen.NAME).to(Place.class);
         bind(Kok17.class).named(Kok17.NAME).to(Place.class);
+        bind(AHerefordBeefstouw.class).named(AHerefordBeefstouw.NAME).to(Place.class);
     }
 }
