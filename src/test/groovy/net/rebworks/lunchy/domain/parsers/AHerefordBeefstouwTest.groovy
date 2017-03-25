@@ -50,4 +50,18 @@ class AHerefordBeefstouwTest extends Specification {
         lunch.items.stream().noneMatch({item -> item.title == "Grillad lax"})
     }
 
+    def "AHB Parser produces a single lunch for whole week"(){
+        given: "A valid menu from AHB"
+        def contents = this.getClass().getResource("/testData/ahb/valid.html").text
+        and: "An AHB parser"
+        def dateCalculator = new DateCalculator(LocalDate.now())
+        def parser = new AHerefordBeefstouw(dateCalculator)
+        when: "The content is parsed"
+        def lunches = parser.parse(contents)
+        then: "The resulting lunch should be valid from the beginning of the week to the end"
+        def lunch = lunches.first()
+        lunch.isValidAt(dateCalculator.getBeginningOfWeek())
+        lunch.isValidAt(dateCalculator.getEndOfWorkWeek())
+    }
+
 }

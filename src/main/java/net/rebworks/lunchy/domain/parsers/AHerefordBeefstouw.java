@@ -36,7 +36,7 @@ public class AHerefordBeefstouw implements Parser {
         if (itemCandidates.isEmpty()) return lunches;
         final Builder builder = Lunch.builder()
                                      .validFrom(dateCalculator.getBeginningOfWeek())
-                                     .validUntil(dateCalculator.getEndOfWorkWeek());
+                                     .validUntil(dateCalculator.getEndOfWorkWeek().plusDays(1));
         itemCandidates.stream().flatMap(this::parseItem).forEach(builder::addItems);
         lunches.add(builder.build());
         return lunches;
