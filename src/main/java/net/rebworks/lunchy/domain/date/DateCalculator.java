@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Optional;
 
 public class DateCalculator {
 
@@ -52,12 +53,20 @@ public class DateCalculator {
     }
 
     public DayOfWeek parseDayOfWeekOrToday(final String dayName) {
+        return parseDayOfWeek(dayName).orElseGet(this::today);
+    }
+
+    private Optional<DayOfWeek> parseDayOfWeek(final String dayName){
         final String day = dayName.trim().toLowerCase();
         for (Entry<String, DayOfWeek> entry : dayMapping.entrySet()) {
             if (day.contains(entry.getKey())) {
-                return entry.getValue();
+                return Optional.of(entry.getValue());
             }
         }
-        return today();
+        return Optional.empty();
+    }
+
+    public boolean isDayOfWeek(final String dayName) {
+        return parseDayOfWeek(dayName).isPresent();
     }
 }

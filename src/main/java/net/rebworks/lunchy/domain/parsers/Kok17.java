@@ -8,7 +8,6 @@ import net.rebworks.lunchy.dto.LunchItem;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 import javax.inject.Inject;
 import java.time.DayOfWeek;
@@ -29,7 +28,11 @@ public class Kok17 implements Parser {
     public List<Lunch> parse(final String input) {
         final List<Lunch> result = new ArrayList<>(5);
         final Document document = Jsoup.parse(input);
-        final Elements dayHeaders = document.body().select("article h1");
+        final Element[] dayHeaders = document.body()
+                                             .select("article h1")
+                                             .stream()
+                                             .filter(element -> dateCalculator.isDayOfWeek(element.text()))
+                                             .toArray(Element[]::new);
         for (final Element dayHeader : dayHeaders) {
             final DayOfWeek validDay = dateCalculator.parseDayOfWeekOrToday(dayHeader.text().trim());
             final LocalDate validFrom = dateCalculator.getDayOfWeek(validDay);
@@ -42,13 +45,15 @@ public class Kok17 implements Parser {
 
     private void parseLunchItems(final Element dayHeader, final Builder builder) {
         Element lunchItemCandidate = dayHeader.nextElementSibling();
-        while (lunchItemCandidate != null && isValidLunchItem(lunchItemCandidate)){
+        while (lunchItemCandidate != null && isValidLunchItem(lunchItemCandidate)) {
             builder.addItems(LunchItem.builder().title(lunchItemCandidate.text()).build());
             lunchItemCandidate = lunchItemCandidate.nextElementSibling();
         }
     }
 
     private boolean isValidLunchItem(final Element lunchItemCandidate) {
-        return lunchItemCandidate.tagName().equals("p") && lunchItemCandidate.select("br").isEmpty();
+        return lunchItemCandidate.tagName().equals("p")
+                && lunchItemCandidate.select("br").isEmpty()
+                && !lunchItemCandidate.text().replace(" ", "").isEmpty();
     }
 }
