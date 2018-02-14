@@ -2,6 +2,8 @@ package net.rebworks.lunchy.domain.parsers;
 
 import net.rebworks.lunchy.domain.Parser;
 import net.rebworks.lunchy.domain.date.DateCalculator;
+import net.rebworks.lunchy.domain.parsers.util.SwedishTitleDescriptionSplitter;
+import net.rebworks.lunchy.domain.parsers.util.SwedishTitleDescriptionSplitter.TitleAndDescription;
 import net.rebworks.lunchy.dto.ImmutableLunch.Builder;
 import net.rebworks.lunchy.dto.Lunch;
 import net.rebworks.lunchy.dto.LunchItem;
@@ -18,10 +20,12 @@ import java.util.stream.Stream;
 public class Silvis implements Parser {
 
     private final DateCalculator dateCalculator;
+    private final SwedishTitleDescriptionSplitter splitter;
 
     @Inject
-    public Silvis(final DateCalculator dateCalculator) {
+    public Silvis(final DateCalculator dateCalculator, final SwedishTitleDescriptionSplitter splitter) {
         this.dateCalculator = dateCalculator;
+        this.splitter = splitter;
     }
 
     @Override
@@ -38,9 +42,8 @@ public class Silvis implements Parser {
 
     private Stream<LunchItem> parseLunchItem(final Element element) {
         final String rawText = element.text().trim();
-        final String[] parts = rawText.split("\\.", 2);
-        if (parts.length == 0) return Stream.empty();
-        if (parts.length == 1) return Stream.of(LunchItem.builder().title(rawText).build());
-        else return Stream.of(LunchItem.builder().title(parts[0].trim()).description(parts[1].trim()).build());
+        if (rawText.length() == 0) return Stream.empty();
+        final TitleAndDescription split = splitter.split(rawText);
+        return Stream.of(LunchItem.builder().title(split.getTitle()).description(split.getDescription()).build());
     }
 }

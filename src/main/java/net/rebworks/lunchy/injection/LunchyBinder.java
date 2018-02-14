@@ -6,6 +6,7 @@ import net.rebworks.lunchy.domain.Parser;
 import net.rebworks.lunchy.domain.Place;
 import net.rebworks.lunchy.domain.date.DateCalculator;
 import net.rebworks.lunchy.domain.io.HttpClient;
+import net.rebworks.lunchy.domain.parsers.util.SwedishTitleDescriptionSplitter;
 import net.rebworks.lunchy.domain.places.AHerefordBeefstouw;
 import net.rebworks.lunchy.domain.places.BangkokKitchen;
 import net.rebworks.lunchy.domain.places.Barabicu;
@@ -31,6 +32,7 @@ public class LunchyBinder extends AbstractBinder {
     @Override
     protected void configure() {
         bind(httpClient).to(HttpClient.class);
+        bind(new SwedishTitleDescriptionSplitter()).to(SwedishTitleDescriptionSplitter.class);
         bindFactories();
         bindParserService();
         bindPlaces();

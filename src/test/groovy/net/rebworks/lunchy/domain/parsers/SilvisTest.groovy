@@ -1,6 +1,7 @@
 package net.rebworks.lunchy.domain.parsers
 
 import net.rebworks.lunchy.domain.date.DateCalculator
+import net.rebworks.lunchy.domain.parsers.util.SwedishTitleDescriptionSplitter
 import spock.lang.Specification
 
 import java.time.DayOfWeek
@@ -14,7 +15,8 @@ class SilvisTest extends Specification {
         def contents = this.getClass().getResource("/testData/silvis/valid.html").text
         and: "A Silvis Parser"
         def calculator = new DateCalculator(LocalDate.now())
-        def parser = new Silvis(calculator)
+        def splitter = new SwedishTitleDescriptionSplitter()
+        def parser = new Silvis(calculator, splitter)
         when: "The file is parsed"
         def lunches = parser.parse(contents)
         then: "The resulting object should contain correct information"
@@ -37,7 +39,8 @@ class SilvisTest extends Specification {
         def contents = this.getClass().getResource("/testData/silvis/invalid_no_items.html").text
         and: "A Silvis Parser"
         def calculator = new DateCalculator(LocalDate.now())
-        def parser = new Silvis(calculator)
+        def splitter = new SwedishTitleDescriptionSplitter()
+        def parser = new Silvis(calculator, splitter)
         when: "The file is parsed"
         def lunches = parser.parse(contents)
         then: "The resulting object should contain correct information"
