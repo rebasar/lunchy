@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+
+<!--[if IEMobile 7 ]> <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" class="no-js iem7"> <![endif]-->
+<!--[if lt IE 7 ]> <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" class="no-js ie6 oldie"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" class="no-js ie7 oldie"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" class="no-js ie8 oldie"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="no-js"><!--<![endif]-->
+
+<!--[if lt IE 9]>
+    <script type="text/javascript">
+         document.createElement('header');
+         document.createElement('hgroup');
+         document.createElement('nav');
+         document.createElement('menu');
+         document.createElement('section');
+         document.createElement('article');
+         document.createElement('aside');
+         document.createElement('footer');
+    </script>
+<![endif]-->
+	
+	<head>
+		<meta charset="utf-8">
+                <!--[if IE 8 ]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><![endif]-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+                 
+		
+		<title>Tacos &amp; Tequila</title>
+        
+		
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		
+		
+		<!-- default stylesheet -->
+		<link rel="stylesheet" href="https://www.tacosandtequila.se/wp-content/themes/quickstep/library/css/normalize.css">		      
+		
+		
+		<link rel="stylesheet" href="https://www.tacosandtequila.se/wp-content/themes/quickstep/style.css">
+                
+            <!-- wordpress head functions -->
+            <link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Tacos &amp; Tequila &raquo; Feed" href="https://www.tacosandtequila.se/?feed=rss2" />
+<link rel="alternate" type="application/rss+xml" title="Tacos &amp; Tequila &raquo; Comments Feed" href="https://www.tacosandtequila.se/?feed=comments-rss2" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.tacosandtequila.se\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='contact-form-7-css'  href='https://www.tacosandtequila.se/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.0' type='text/css' media='all' />
+<link rel='stylesheet' id='owl_style-css'  href='https://www.tacosandtequila.se/wp-content/plugins/enjoy-instagram-instagram-responsive-images-gallery-and-carousel/css/owl.carousel.css?ver=4.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='owl_style_2-css'  href='https://www.tacosandtequila.se/wp-content/plugins/enjoy-instagram-instagram-responsive-images-gallery-and-carousel/css/owl.theme.css?ver=4.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='owl_style_3-css'  href='https://www.tacosandtequila.se/wp-content/plugins/enjoy-instagram-instagram-responsive-images-gallery-and-carousel/css/owl.transitions.css?ver=4.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='swipebox_css-css'  href='https://www.tacosandtequila.se/wp-content/plugins/enjoy-instagram-instagram-responsive-images-gallery-and-carousel/css/swipebox.css?ver=4.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='grid_fallback-css'  href='https://www.tacosandtequila.se/wp-content/plugins/enjoy-instagram-instagram-responsive-images-gallery-and-carousel/css/grid_fallback.css?ver=4.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='grid_style-css'  href='https://www.tacosandtequila.se/wp-content/plugins/enjoy-instagram-instagram-responsive-images-gallery-and-carousel/css/grid_style.css?ver=4.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='prettyphoto-css'  href='https://www.tacosandtequila.se/wp-content/themes/quickstep//css/prettyPhoto.css?ver=4.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='flexslider-css'  href='https://www.tacosandtequila.se/wp-content/themes/quickstep//css/flexslider.css?ver=4.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='foundation-css'  href='https://www.tacosandtequila.se/wp-content/themes/quickstep//css/foundation.css?ver=4.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='flexnav-css'  href='https://www.tacosandtequila.se/wp-content/themes/quickstep//css/flexnav.css?ver=4.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='socialicons-css'  href='https://www.tacosandtequila.se/wp-content/themes/quickstep//css/social_foundicons.css?ver=4.9.3' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-content/plugins/enjoy-instagram-instagram-responsive-images-gallery-and-carousel/js/modernizr.custom.26633.js?ver=4.9.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var GridRotator = {"pluginsUrl":"https:\/\/www.tacosandtequila.se\/wp-content\/plugins"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-content/plugins/enjoy-instagram-instagram-responsive-images-gallery-and-carousel/js/jquery.gridrotator.js?ver=4.9.3'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-content/plugins/enjoy-instagram-instagram-responsive-images-gallery-and-carousel/js/owl.carousel.js?ver=4.9.3'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-content/plugins/enjoy-instagram-instagram-responsive-images-gallery-and-carousel/js/jquery.swipebox.js?ver=4.9.3'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-content/plugins/enjoy-instagram-instagram-responsive-images-gallery-and-carousel/js/ios-orientationchange-fix.js?ver=4.9.3'></script>
+<link rel='https://api.w.org/' href='https://www.tacosandtequila.se/index.php?rest_route=/' />
+	<script type="text/javascript">
+		jQuery(function($) {
+			$(".swipebox_grid").swipebox({
+				hideBarsDelay : 0
+			});
+
+		});
+
+		jQuery(function(){
+			/*
+			jQuery(document.body)
+				.on('click touchend','#swipebox-slider .current img', function(e){
+					jQuery('#swipebox-next').click();
+					return false;
+				})
+				.on('click touchend','#swipebox-slider .current', function(e){
+					jQuery('#swipebox-close').trigger('click');
+				});
+			*/
+		});
+
+	</script>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Special+Elite:regular&subset=latin">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Special+Elite:regular&subset=latin">
+<link rel="stylesheet" type="text/css" href='https://www.tacosandtequila.se/wp-content/themes/quickstep/css/dark.css' />
+
+<style type="text/css">
+body, p, thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td, label {
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: normal;
+	font-family: georgia;
+}
+
+a, a > * {
+	color:#ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color:#F7941E;
+	font-family:'Special Elite', georgia;
+}
+.button-alt, .button, .button.small, .button.large, .button.medium, input[type="submit"], .commentlist .comment-reply-link  {
+	background:#F7941E ;
+	color:#212121 ;
+	font-family:'Special Elite', georgia;
+}
+.button.inverse:hover {
+	background:#F7941E ;
+}
+
+
+
+.ie8 #header-bg, .ie7 #header-bg {
+	background:#212121;
+	border-color:#F7941E;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	-moz-opacity: 1;
+	-khtml-opacity: 1;
+	opacity: 1;
+}
+
+
+
+@media all and (min-width: 800px) {
+header[role="banner"], #header-bg {
+			position:fixed !important;
+	}
+#header-bg {
+	background:#212121;
+	border-color:#F7941E;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	-moz-opacity: 1;
+	-khtml-opacity: 1;
+	opacity: 1;
+}
+}
+.ie8 header[role="banner"], .ie8 #header-bg, .ie7 header[role="banner"], .ie7 #header-bg {
+	left:0px;
+	        position: fixed;
+		position:fixed !important;
+	}
+nav[role="navigation"] .sf-menu a {
+	font-family:'Special Elite', Arial, Helvetica, sans-serif;
+	color:#ffffff;
+}
+nav[role="navigation"] .sf-menu li.active ul a {
+        color:#ffffff ;
+}
+@media all and (max-width: 800px) {
+    nav[role="navigation"] .sf-menu a, nav[role="navigation"] .sf-menu li.active ul a {
+            color:#f7f7f7;
+    }
+}
+footer[role="contentinfo"] h1, footer[role="contentinfo"] h2, footer[role="contentinfo"] h3, footer[role="contentinfo"] h4, footer[role="contentinfo"] h5, footer[role="contentinfo"] h6{
+	color:#ffffff ;
+}
+footer[role="contentinfo"] {
+	background:#363839 ;
+	color:#999999 ;	
+}
+footer[role="contentinfo"] a{
+	color:#ffffff ;	
+}
+#footer-copy {
+	background:#212121 ;
+	color:#999999 ;	
+}
+footer[role="contentinfo"] a{
+	color:#ffffff ;	
+}
+.container, .child-container {
+	background-color:#fbfbfb;	}
+.entry-utility a:active, .entry-utility a:hover, .entry-meta a:active, .entry-meta a:hover, .entry-title a:active, .entry-title a:hover, p.trigger.active a, .aside .current_page_item a, .aside .current_page_item .page_item a:hover, .aside .current_page_item .page_item a:active, .aside a:active, .aside a:hover, .accent, a:active, a:hover, nav[role="navigation"] .sf-menu a:hover, nav[role="navigation"] .sf-menu li.active a, .project-title a:hover, footer[role=contentinfo] a:hover, .foundicon-email:hover, #comments span, a.more-link:hover, nav[role="navigation"] .sf-menu li.active ul a:hover  {color:#F7941E;}
+
+ input[type="submit"]:hover, .filter li:hover, .button:hover, .button.inverse, .commentlist .comment-reply-link:hover, .qs_page_navi li.bpn-current, .accent-bg, .circle {background-color:#F7941E;}
+
+.menu-button.open:hover, .menu-button:hover {background-color:#F7941E !important;}
+::selection {background-color:#F7941E ;}
+
+
+
+ul.tabs li.active, [role='navigation'] li:hover, footer[role=contentinfo], nav[role="navigation"] .sf-menu li.active { 
+border-color:#F7941E !important;}
+
+  
+
+#container-546{ background: url(https://www.tacosandtequila.se/wp-content/uploads/2014/10/bedge_grunge_@2X1.png)   scroll;color:#;height:;background-repeat:repeat;}#container-546 h1, #container-546 h2, #container-546 h3, #container-546 h4, #container-546 h5, #container-546 h6{ color:#;}#container-546 p, #container-546 label { color:#;}#container-63{ background: url(https://www.tacosandtequila.se/wp-content/uploads/2014/10/bedge_grunge_@2X_dark3.png)   scroll;color:#;height:;background-repeat:repeat;}#container-63 h1, #container-63 h2, #container-63 h3, #container-63 h4, #container-63 h5, #container-63 h6{ color:#;}#container-63 p, #container-63 label { color:#;}#container-182{ background: url(https://www.tacosandtequila.se/wp-content/uploads/2014/10/bedge_grunge_@2X_dark1.png)   scroll;color:#;height:;background-repeat:repeat;}#container-182 h1, #container-182 h2, #container-182 h3, #container-182 h4, #container-182 h5, #container-182 h6{ color:#;}#container-182 p, #container-182 label { color:#;}#container-348{ background: url(https://www.tacosandtequila.se/wp-content/uploads/2014/10/bedge_grunge_@2X.png)   scroll;color:#000000;height:;background-repeat:repeat;}#container-348 h1, #container-348 h2, #container-348 h3, #container-348 h4, #container-348 h5, #container-348 h6{ color:#;}#container-348 p, #container-348 label { color:#000000;}#container-861{ background: url(https://www.tacosandtequila.se/wp-content/uploads/2014/10/bedge_grunge_@2X_dark2.png)   scroll;color:#;height:;background-repeat:repeat;}#container-861 h1, #container-861 h2, #container-861 h3, #container-861 h4, #container-861 h5, #container-861 h6{ color:#;}#container-861 p, #container-861 label { color:#;}#container-1006{ background: url(https://www.tacosandtequila.se/wp-content/uploads/2014/11/bedge_grunge_@2X_dark.png)   scroll;color:#;height:;background-repeat:repeat;}#container-1006 h1, #container-1006 h2, #container-1006 h3, #container-1006 h4, #container-1006 h5, #container-1006 h6{ color:#;}#container-1006 p, #container-1006 label { color:#;}#container-1144{ background: url(https://www.tacosandtequila.se/wp-content/uploads/2015/06/bedge_grunge_@2X_dark.png)   scroll;color:#;height:;background-repeat:repeat;}#container-1144 h1, #container-1144 h2, #container-1144 h3, #container-1144 h4, #container-1144 h5, #container-1144 h6{ color:#;}#container-1144 p, #container-1144 label { color:#;}#container-1319{ background: url(https://www.tacosandtequila.se/wp-content/uploads/2016/05/bedge_grunge_@2X_dark.png)   scroll;color:#;height:;background-repeat:repeat;}#container-1319 h1, #container-1319 h2, #container-1319 h3, #container-1319 h4, #container-1319 h5, #container-1319 h6{ color:#;}#container-1319 p, #container-1319 label { color:#;}
+@media all and (max-width: 800px) {
+	.container {
+		background-attachment:scroll !important;
+	}
+	.menu-button {
+		display:block !important;
+	}
+}
+
+.attachment-blog-image {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity=80);
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+
+
+#portfolio-container img {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter: alpha(opacity=80);
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+
+
+		#slider-848, #slider-848 .slides { max-height: px !important; }
+		.slides {overflow:hidden;}
+	
+ 
+        @media only screen and (orientation: landscape) and (device-width: 320px), (device-width: 768px) {
+            .container {
+                background-attachment:scroll !important;
+            }
+            #demo-styles {
+                position: absolute !important;
+            }
+        }
+
+
+</style>		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		            <!-- end of wordpress head -->        
+		
+	</head>
+	
+	<body class="home blog">
+	
+
+			
+          
+			<header role="banner">
+			
+            	<div id="header-bg"></div>
+            	
+				<div id="inner-header" class="wrapper clearfix">
+					
+                    <div class="row">
+                    
+                    	<div class="twelve columns">
+                            <!-- to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> -->
+                            <div id="logo" class="h1">
+                            	<span><a href="https://www.tacosandtequila.se" rel="nofollow">
+									                                        <img src="https://www.tacosandtequila.se/wp-content/uploads/2012/10/logo_shadow.png" alt="Tacos &amp; Tequila" />
+                                                                        </a>
+                              	</span>
+                            </div>
+
+                            <!-- if you'd like to use the site description you can un-comment it below -->
+                                                        
+                            
+                            
+                            <div class='menu-button'></div>	
+                            <nav role="navigation">
+                                		
+		<div class="menu">
+		<ul class="sf-menu sf-js-enabled" id="nav">
+			<!--<li ><a rel="home" href="#home">Home</a></li>-->
+						  			
+			  					<li class="page_item"><a href="https://www.tacosandtequila.se/?page_id=348" data-name="home" data-slide="container-348">HOME</a></li>
+			 			
+            <li class="page_item item-with-ul"><a href="https://www.tacosandtequila.se/?page_id=182" data-name="our-team" data-slide="container-182">MENUS</a><ul class="children">                        
+                                                <li class="page_item"><a href="https://www.tacosandtequila.se/?page_id=1006" data-name="our-team" data-slide="container-1006">LUNCH</a></li>
+            
+			                        
+                                                <li class="page_item"><a href="https://www.tacosandtequila.se/?page_id=1319" data-name="our-team" data-slide="container-1319">DINNER</a></li>
+            
+			                        
+                                                <li class="page_item"><a href="https://www.tacosandtequila.se/?page_id=861" data-name="our-team" data-slide="container-861">BEVERAGES</a></li>
+            
+			</ul></li>			  			
+			  					<li class="page_item"><a href="https://www.tacosandtequila.se/?page_id=546" data-name="sample-page-2" data-slide="container-546">T&T ON INSTAGRAM</a></li>
+			 			
+            			  			
+			  					<li class="page_item"><a href="https://www.tacosandtequila.se/?page_id=63" data-name="contact" data-slide="container-63">CONTACT & OPENING HOURS</a></li>
+			 			
+            			
+		</ul>
+		</div>
+
+                            </nav>
+                            
+                    	</div>
+                    
+                    </div>
+				
+				</div> <!-- end #inner-header -->
+			
+			</header> <!-- end header -->
+		
+	    		
+
+<div class="main-wrapper">
+			
+
+ 
+                                       
+             <div class="vertical-wrapper 348">
+
+              	<div id="container-348" data-name="home" class="container first">
+                         
+                	<div class="clear-top"></div>
+                	
+              		<div class="content">
+                    
+                    	
+                            
+						<div class="row">
+			            
+                
+				<div class="twelve columns" id="post-348">
+	                
+					<div class="entry-content">
+	
+	                    <p>&nbsp;</p>
+<section id="slider-848" class="flexslider slider-848">
+<ul class="slides">
+<li class="slide"><img src="https://www.tacosandtequila.se/wp-content/uploads/2014/10/11.png" alt="Start" />
+<div class="flex-caption"></div>
+</li>
+<li class="slide"><img src="https://www.tacosandtequila.se/wp-content/uploads/2014/10/2.png" alt="Start" />
+<div class="flex-caption"></div>
+</li>
+<li class="slide"><img src="https://www.tacosandtequila.se/wp-content/uploads/2017/06/lunch_autumn_2015.png" alt="Start" />
+<div class="flex-caption"></div>
+</li>
+</ul>
+</section>
+<p>&nbsp;</p>
+                        
+                        <div class="clear"></div>
+
+
+<!-- You can start editing here. -->
+
+
+		<!-- If comments are closed. -->
+	<!--<p class="nocomments">Comments are closed.</p>-->
+
+	
+
+
+	
+					</div>
+				</div><!-- .post -->
+                
+            
+</div>                        
+					</div>
+                    <!-- End content -->
+                    
+                    </div>
+					<!-- End container -->
+                                        
+                    								 
+                    </div>
+                    <!-- End vertical wrapper -->
+                    
+                                        
+             <div class="vertical-wrapper 1144">
+
+              	<div id="container-1144" data-name="welcome" class="container ">
+                         
+                	<div class="clear-top"></div>
+                	
+              		<div class="content">
+                    
+                    	
+                            
+						<div class="row">
+			            
+                
+				<div class="twelve columns" id="post-1144">
+	                
+					<div class="entry-content">
+	
+	                    <img src="https://www.tacosandtequila.se/wp-content/uploads/2015/06/head-welcome.png" alt="" width="528" height="41" class="aligncenter size-full wp-image-1539" srcset="https://www.tacosandtequila.se/wp-content/uploads/2015/06/head-welcome.png 1056w, https://www.tacosandtequila.se/wp-content/uploads/2015/06/head-welcome-300x23.png 300w, https://www.tacosandtequila.se/wp-content/uploads/2015/06/head-welcome-768x60.png 768w, https://www.tacosandtequila.se/wp-content/uploads/2015/06/head-welcome-1024x80.png 1024w" sizes="(max-width: 528px) 100vw, 528px" />
+<p style="text-align: center; font-family: Special Elite; font-size: 15px; padding-top: 50px;"><strong><span style="color: #f7941e;">Tacos &amp; Tequila</span></strong> is a Mexican-American restaurant located at Tredje Långgatan in Linnéstaden, Gothenburg. The restaurant was opened in the fall of 2014 and has a menu serving classic Mexican-American dishes.<br />
+Open every day. Lunch is served every Monday – Friday 11.30 &#8211; 14.00.</p>
+<img src="https://www.levantine.se/wp-content/uploads/2017/11/krav-large.png" alt="" width="91" height="89" class="aligncenter size-full wp-image-2358" />
+                        
+                        <div class="clear"></div>
+
+
+<!-- You can start editing here. -->
+
+
+		<!-- If comments are closed. -->
+	<!--<p class="nocomments">Comments are closed.</p>-->
+
+	
+
+
+	
+					</div>
+				</div><!-- .post -->
+                
+            
+</div>                        
+					</div>
+                    <!-- End content -->
+                    
+                    </div>
+					<!-- End container -->
+                                        
+                    								 
+                    </div>
+                    <!-- End vertical wrapper -->
+                    
+                                        
+             <div class="vertical-wrapper 182">
+
+              	<div id="container-182" data-name="our-team" class="container ">
+                         
+                	<div class="clear-top"></div>
+                	
+              		<div class="content">
+                    
+                    	
+                            
+						<div class="row">
+			            
+                
+				<div class="twelve columns" id="post-182">
+	                
+					<div class="entry-content">
+	
+	                                            
+                        <div class="clear"></div>
+
+
+<!-- You can start editing here. -->
+
+
+		<!-- If comments are closed. -->
+	<!--<p class="nocomments">Comments are closed.</p>-->
+
+	
+
+
+	
+					</div>
+				</div><!-- .post -->
+                
+            
+</div>                        
+					</div>
+                    <!-- End content -->
+                    
+                    </div>
+					<!-- End container -->
+                                        
+                    					
+											
+										
+                            <div id="container-1006" data-name="lunch" class="container">
+                                
+                                <div class="clear-top"></div>
+                     
+                                <div class="content child">
+                            
+						<div class="row">
+			            
+                
+				<div class="twelve columns" id="post-1006">
+	                
+					<div class="entry-content">
+	
+	                    <img class="aligncenter size-full wp-image-1541" src="https://www.tacosandtequila.se/wp-content/uploads/2014/11/head-lunch.png" alt="" width="528" height="41" srcset="https://www.tacosandtequila.se/wp-content/uploads/2014/11/head-lunch.png 1056w, https://www.tacosandtequila.se/wp-content/uploads/2014/11/head-lunch-300x23.png 300w, https://www.tacosandtequila.se/wp-content/uploads/2014/11/head-lunch-768x60.png 768w, https://www.tacosandtequila.se/wp-content/uploads/2014/11/head-lunch-1024x80.png 1024w" sizes="(max-width: 528px) 100vw, 528px" />
+<p>&nbsp;</p>
+<div class="one_fifth column" style="float:;">
+</div>
+<div class="three_fifth column" style="float:;">
+<h3 style="text-align: center; font-family: Special Elite; font-size: 15px; letter-spacing: 4px; padding-top: 15px;"><span style="color: #f7941e;"><strong>TACOS &amp; TEQUILA LUNCH WEEK 7</strong></span></h3>
+<p style="text-align: center; font-family: Special Elite; font-size: 15px;"><span style="color: #ff9900;"><strong>MONDAY &#8211; FRIDAY</strong></span><br />
+<span style="color: #f7941e;">Fish Taco:</span> Minced salmon with spring onion, ginger, chili, lime and coleslaw<br />
+<span style="color: #f7941e;">Meat Taco:</span><br />
+Chicken bbq, plain mayo and caramelized onions<br />
+<span style="color: #f7941e;">Veg Taco:</span> Portabello with chipotle salsa, cheddar and spring onion<br />
+<span style="color: #f7941e;">Always:</span> Chili on prime rib, red rice, refritos, salsa fresca and pickled red onions</p>
+<p style="text-align: center; font-family: Special Elite; font-size: 15px;"><strong><span class="accent">Lunch is 108 kr including coffee and cookie.<br />
+Served 11:30 &#8211; 14:00</span></strong></p>
+</div>
+<div class="one_fifth column last" style="float:;">
+<p>&nbsp;</p>
+</div>
+<div class="clearboth"></div>
+                        
+                        <div class="clear"></div>
+
+
+<!-- You can start editing here. -->
+
+
+		<!-- If comments are closed. -->
+	<!--<p class="nocomments">Comments are closed.</p>-->
+
+	
+
+
+	
+					</div>
+				</div><!-- .post -->
+                
+            
+</div>                                </div>
+                                <!-- End child content -->
+                                
+                             </div>
+                             <!-- End child container-->
+                             
+                     					
+											
+										
+                            <div id="container-1319" data-name="tacos-more" class="container">
+                                
+                                <div class="clear-top"></div>
+                     
+                                <div class="content child">
+                            
+						<div class="row">
+			            
+                
+				<div class="twelve columns" id="post-1319">
+	                
+					<div class="entry-content">
+	
+	                    <img class="aligncenter size-full wp-image-1551" src="https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-dinner.png" alt="" width="528" height="41" srcset="https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-dinner.png 1056w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-dinner-300x23.png 300w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-dinner-768x60.png 768w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-dinner-1024x80.png 1024w" sizes="(max-width: 528px) 100vw, 528px" />
+<p>&nbsp;</p>
+<div class="one_fifth column" style="float:;">
+</div>
+<div class="three_fifth column" style="float:;">
+<img class="aligncenter size-full wp-image-1537" src="https://www.tacosandtequila.se/wp-content/uploads/2016/05/tacosandmore-2.png" alt="" width="283" height="71" srcset="https://www.tacosandtequila.se/wp-content/uploads/2016/05/tacosandmore-2.png 566w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/tacosandmore-2-300x75.png 300w" sizes="(max-width: 283px) 100vw, 283px" /></p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px; padding-top: 0px;"><span class="accent">SURF &amp; TURF TACOS<span style="float: right;">145 kr</span></span><br />
+Vannamei prawns, chorizo mayo, roasted chorizo, pickled onion</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">FRIED FISH TACOS <span style="float: right;">145 kr</span></span><br />
+Beer-fried cod, carrot escabeche, ancho chili mayo, cilantro</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">TACO AL PASTOR <span style="float: right;">145 kr</span></span><br />
+Pork tenderloin , pineapple, red peppers,spring onion, manchego</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">BEEF TACO <span style="float: right;">145 kr</span></span><br />
+Flank steak, pickled jalapeños, philadelphia, roasted corn, spring onion</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">JACKFRUIT TACO (Vegan) <span style="float: right;">125 kr</span></span><br />
+Jackfruit ”exotic”, coconut flakes, mango salsa</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">CAULIFLOWER TACO <span style="float: right;">125 kr</span></span><br />
+Cauliflower, salsa guajillo, manchego, hazelnuts, cilantro</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">PORTABELLO QUESADILLAS <span style="float: right;">125 kr</span></span><br />
+Grilled portabello, grilled peppers, cheddar, salsaguajillo, sour cream</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">CHICKEN QUESADILLAS <span style="float: right;">135 kr</span></span><br />
+Grilled chicken, grilled peppers, cheddar, sourcream, ancho chili mayo</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">SIGNATURE CHILI <span style="float: right;">125 kr</span></span><br />
+Beef chili, roasted corn crème, sour cream, pickled onion</p>
+<p>&nbsp;</p>
+<img class="aligncenter size-full wp-image-1547" src="https://www.tacosandtequila.se/wp-content/uploads/2016/05/ceviches.png" alt="" width="283" height="71" srcset="https://www.tacosandtequila.se/wp-content/uploads/2016/05/ceviches.png 566w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/ceviches-300x75.png 300w" sizes="(max-width: 283px) 100vw, 283px" />
+<p style="text-align: left; font-family: Special Elite; font-size: 15px; padding-top: 20px;"><span class="accent">SALOMON <span style="float: right;">125 kr</span></span><br />
+Watermelon, cucumber, ancho chili mayo,mango mustard, tortilla crisp</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">SCALLOPS <span style="float: right;">125 kr</span></span><br />
+Passion fruit, mango, green chili, silver onion,cilantro</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">TUNA <span style="float: right;">125 kr</span></span><br />
+Sweet potato, cantaloupe, red chili, spring onion,cucumber, popcorn</p>
+<p>&nbsp;</p>
+<img class="aligncenter size-full wp-image-1545" src="https://www.tacosandtequila.se/wp-content/uploads/2016/05/antojitos.png" alt="" width="283" height="71" srcset="https://www.tacosandtequila.se/wp-content/uploads/2016/05/antojitos.png 566w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/antojitos-300x75.png 300w" sizes="(max-width: 283px) 100vw, 283px" />
+<p style="text-align: left; font-family: Special Elite; font-size: 15px; padding-top: 20px;"><span class="accent">SALSAS &#8220;OF THE DAY&#8221;</span><br />
+Selections of three seasonal salsas (Vegan) <span style="float: right;">95 kr</span></p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">GUACAMOLE</span><br />
+Classic (Vegan) <span style="float: right;">95 kr</span><br />
+Pineapple and coconut (Vegan) <span style="float: right;">95 kr</span><br />
+Pickled green chili and tomatillo (Vegan) <span style="float: right;">95 kr</span></p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">GUACAMOLE TASTING</span><br />
+All of our signature guacamoles and salsas <span style="float: right;">195 kr</span></p>
+<p>&nbsp;</p>
+<img class="aligncenter size-full wp-image-1557" src="https://www.tacosandtequila.se/wp-content/uploads/2016/05/sideorders.png" alt="" width="283" height="71" srcset="https://www.tacosandtequila.se/wp-content/uploads/2016/05/sideorders.png 566w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/sideorders-300x75.png 300w" sizes="(max-width: 283px) 100vw, 283px" />
+<p style="text-align: left; font-family: Special Elite; font-size: 15px; padding-top: 20px;">• Spicy red rice and black refried beans <span style="float: right;">55 kr</span><br />
+• Sweet potato fries with ancho chili mayo <span style="float: right;">60 kr</span><br />
+• Grilled corn cob with ancho chili mayo, manchego, lime <span style="float: right;">85 kr</span><br />
+• Totopo chips with melted cheese and pickled jalapeños <span style="float: right;">85 kr</span><br />
+• Padrones with sea salt and lime (Vegan) <span style="float: right;">65 kr</span></p>
+<p>&nbsp;</p>
+<img class="aligncenter size-full wp-image-1556" src="https://www.tacosandtequila.se/wp-content/uploads/2016/05/postres.png" alt="" width="283" height="71" srcset="https://www.tacosandtequila.se/wp-content/uploads/2016/05/postres.png 566w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/postres-300x75.png 300w" sizes="(max-width: 283px) 100vw, 283px" />
+<p style="text-align: left; font-family: Special Elite; font-size: 15px; padding-top: 20px;"><span class="accent">CHURROS <span style="float: right;">95 kr</span></span><br />
+Fried-dough pastry with hot chocolate sauceand banana ice cream</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">POPCORN ICE CREAM <span style="float: right;">95 kr</span></span><br />
+Fried corn tortilla with popcorn ice cream andtequila caramel sauce</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">SORBET OR ICE CREAM <span style="float: right;">45 kr</span></span><br />
+A scoop of sorbet or ice cream &#8211; Today’s flavors</p>
+</div>
+<div class="one_fifth column last" style="float:;">
+<p>&nbsp;</p>
+</div>
+<div class="clearboth"></div>
+                        
+                        <div class="clear"></div>
+
+
+<!-- You can start editing here. -->
+
+
+		<!-- If comments are closed. -->
+	<!--<p class="nocomments">Comments are closed.</p>-->
+
+	
+
+
+	
+					</div>
+				</div><!-- .post -->
+                
+            
+</div>                                </div>
+                                <!-- End child content -->
+                                
+                             </div>
+                             <!-- End child container-->
+                             
+                     					
+											
+										
+                            <div id="container-861" data-name="wine" class="container">
+                                
+                                <div class="clear-top"></div>
+                     
+                                <div class="content child">
+                            
+						<div class="row">
+			            
+                
+				<div class="twelve columns" id="post-861">
+	                
+					<div class="entry-content">
+	
+	                    <img src="https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-beverages.png" alt="" width="528" height="41" class="aligncenter size-full wp-image-1549" srcset="https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-beverages.png 1056w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-beverages-300x23.png 300w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-beverages-768x60.png 768w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-beverages-1024x80.png 1024w" sizes="(max-width: 528px) 100vw, 528px" />
+<p>&nbsp;</p>
+<div class="one_half column" style="float:;">
+<img src="https://www.tacosandtequila.se/wp-content/uploads/2016/05/margaritas.png" alt="" width="283" height="31" class="aligncenter size-full wp-image-1555" srcset="https://www.tacosandtequila.se/wp-content/uploads/2016/05/margaritas.png 566w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/margaritas-300x33.png 300w" sizes="(max-width: 283px) 100vw, 283px" />
+<p style="text-align: left; font-family: Special Elite; font-size: 15px; padding-top: 20px;"><span class="accent">CLASSIC MARGARITA <span style="float: right;">98 kr</span></span><br />
+Tequila / Triple Sec / lime / sugar</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">MARGARITA OF THE NIGHT <span style="float: right;">98 kr</span></span><br />
+Tequila / Triple Sec / lime / sugar / fruit</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">FROZEN MARGARITA <span style="float: right;">98 kr</span></span><br />
+Tequila / Triple Sec / lime / sugar </p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">PREMIUM MARGARITA <span style="float: right;">119 kr</span></span><br />
+Tequila / Citrónage / lime / agave</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">MEZCALITA <span style="float: right;">119 kr</span></span><br />
+Mezcal / lime / sugar</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">MARGARITA PITCHER <span style="float: right;">469 kr</span></span><br />
+Bigger / better / faster / stronger</p>
+<p>&nbsp;<br />
+<img src="https://www.tacosandtequila.se/wp-content/uploads/2016/05/drinks.png" alt="" width="283" height="31" class="aligncenter size-full wp-image-1548" srcset="https://www.tacosandtequila.se/wp-content/uploads/2016/05/drinks.png 566w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/drinks-300x33.png 300w" sizes="(max-width: 283px) 100vw, 283px" /></p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px; padding-top: 20px;"><span class="accent">EL DIABLO <span style="float: right;">119 kr</span></span><br />
+Tequila / Crème de Cassis / lime / ginger beer</p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">LOS ALTOS <span style="float: right;">119 kr</span></span><br />
+Tequila / Cointreau / lime / sugar / soda </p>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;"><span class="accent">SMOKEY CARIBBEAN <span style="float: right;">119 kr</span></span><br />
+Mezcal / sparkling wine / lime / agave / pineapple</p>
+</div>
+<div class="one_half column last" style="float:;">
+<img src="https://www.tacosandtequila.se/wp-content/uploads/2016/05/beerandcider.png" alt="" width="283" height="31" class="aligncenter size-full wp-image-1546" srcset="https://www.tacosandtequila.se/wp-content/uploads/2016/05/beerandcider.png 566w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/beerandcider-300x33.png 300w" sizes="(max-width: 283px) 100vw, 283px" />
+<h3 style="text-align: center; font-family: Special Elite; font-size: 15px; letter-spacing: 4px;"><span class="accent"><strong>DRAFT</strong></span></h3>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;">Norrlands Ljus EKO 4,7% <span style="float: right;">56 kr</span><br />
+Texas State of Mind 5,0% <span style="float: right;">69 kr</span><br />
+Brutal Brewing, Tail of the Whale 4,8% <span style="float: right;">64 kr</span><br />
+Firestone Walker Easy Jack 4,5% <span style="float: right;">74 kr</span><br />
+Cruzcampo 4,8% <span style="float: right;">64 kr</span></p>
+<h3 style="text-align: center; font-family: Special Elite; font-size: 15px; letter-spacing: 4px;"><span class="accent"><strong>BOTTLE</strong></span></h3>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;">Sol 4,5% <span style="float: right;">59 kr</span><br />
+Amstel 4,9% <span style="float: right;">62 kr</span><br />
+Rådanäs IPA 6,6% <span style="float: right;">88 kr</span><br />
+Rådanäs Burbon Mash 6,7% <span style="float: right;">88 kr</span><br />
+Gotlands  Bryggeri, Great White IPA 7,3% <span style="float: right;">72 kr</span><br />
+Gotlands Bryggeri, Daredevil Bulldog People&#8217;s IPA 3,5% <span style="float: right;">55 kr</span></p>
+<h3 style="text-align: center; font-family: Special Elite; font-size: 15px; letter-spacing: 4px;"><span class="accent"><strong>CAN</strong></span></h3>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;">Pistonhead, Flat Tire 4,5% <span style="float: right;">55 kr</span><br />
+Pistonhead, Full Amber 6,0% <span style="float: right;">65 kr</span></p>
+<h3 style="text-align: center; font-family: Special Elite; font-size: 15px; letter-spacing: 4px;"><span class="accent"><strong>NON ALCOHOLIC</strong></span></h3>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;">Melleruds AlkoholfriaPilsner EKO 0,5% <span style="float: right;">45 kr</span><br />
+Gotlands Bryggeri,Easy Rider Bulldog IPA  0,4% <span style="float: right;">55 kr</span><br />
+Appletiser <span style="float: right;">45 kr</span></p>
+<p>&nbsp;<br />
+<img src="https://www.tacosandtequila.se/wp-content/uploads/2014/10/organicwines.png" alt="" width="283" height="63" class="aligncenter size-full wp-image-1578" srcset="https://www.tacosandtequila.se/wp-content/uploads/2014/10/organicwines.png 566w, https://www.tacosandtequila.se/wp-content/uploads/2014/10/organicwines-300x67.png 300w" sizes="(max-width: 283px) 100vw, 283px" /></p>
+<h3 style="text-align: center; font-family: Special Elite; font-size: 15px; letter-spacing: 4px;"><span class="accent"><strong>HOUSE WINE</strong></span></h3>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;">Red / White <span style="float: right;">80 kr / 340 kr</span></p>
+<h3 style="text-align: center; font-family: Special Elite; font-size: 15px; letter-spacing: 4px;"><span class="accent"><strong>WHITE WINE</strong></span></h3>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;">Cono Sur Organic Chardonnay, Chile <span style="float: right;">90 kr / 400 kr</span><br />
+Von Buhl Riesling, Tyskland <span style="float: right;">110 kr / 450 kr</span><br />
+Walnut Collectables Sauvignon Blanc,<br />
+New Zealand <span style="float: right;">130 kr / 540 kr</span></p>
+<h3 style="text-align: center; font-family: Special Elite; font-size: 15px; letter-spacing: 4px;"><span class="accent"><strong>RED WINE</strong></span></h3>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;">Zensa primitivo, Italien <span style="float: right;">100 kr / 420 kr</span><br />
+Yalumba shiraz, South Australia <span style="float: right;">120 kr / 500 kr</span><br />
+Lander Jenkins Cabernet Sauvignon, California <span style="float: right;">520 kr</span></p>
+<h3 style="text-align: center; font-family: Special Elite; font-size: 15px; letter-spacing: 4px;"><span class="accent"><strong>SPARKLING</strong></span></h3>
+<p style="text-align: left; font-family: Special Elite; font-size: 15px;">Tacos &#038; Tequila´s sparkling wine <span style="float: right;">75 kr / 450 kr</span><br />
+Tacos &#038; Tequila´s Champagne <span style="float: right;">700 kr</span></p>
+</div>
+<div class="clearboth"></div>
+<p>&nbsp;</p>
+                        
+                        <div class="clear"></div>
+
+
+<!-- You can start editing here. -->
+
+
+		<!-- If comments are closed. -->
+	<!--<p class="nocomments">Comments are closed.</p>-->
+
+	
+
+
+	
+					</div>
+				</div><!-- .post -->
+                
+            
+</div>                                </div>
+                                <!-- End child content -->
+                                
+                             </div>
+                             <!-- End child container-->
+                             
+                     								 
+                    </div>
+                    <!-- End vertical wrapper -->
+                    
+                                        
+             <div class="vertical-wrapper 546">
+
+              	<div id="container-546" data-name="sample-page-2" class="container ">
+                         
+                	<div class="clear-top"></div>
+                	
+              		<div class="content">
+                    
+                    	
+                            
+						<div class="row">
+			            
+                
+				<div class="twelve columns" id="post-546">
+	                
+					<div class="entry-content">
+	
+	                    
+
+
+<script type="text/javascript">
+
+			jQuery(function() {
+				jQuery('#grid-1').gridrotator({
+					rows		: 3,
+					columns		: 4,
+					animType	: 'fadeInOut',
+					onhover : false,
+					interval		: 7000,
+					preventClick    : false,
+					w1400           : {
+    rows    : 3,
+    columns : 4},
+					w1024           : {
+    rows    : 3,
+    columns : 4},
+
+w768            : {
+    rows    : 3,
+    columns : 4},
+
+w480            : {
+    rows    : 3,
+    columns : 4},
+
+w320            : {
+    rows    : 3,
+    columns : 4},
+
+w240            : {
+    rows    : 3,
+    columns : 4}
+				});
+
+			jQuery('#grid-1').fadeIn('1000');
+
+
+			});
+
+		</script>
+<p>&nbsp;</p>
+<img src="https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-instagram.png" alt="" width="528" height="41" class="aligncenter size-full wp-image-1552" srcset="https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-instagram.png 1056w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-instagram-300x23.png 300w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-instagram-768x60.png 768w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-instagram-1024x80.png 1024w" sizes="(max-width: 528px) 100vw, 528px" />
+<div id="grid-1" class="ri-grid ri-grid-size-2 ri-shadow" style="display:none;"><ul><li><a title="All you need is.. love. Nej skoja. TACOS såklart 😎 Vi har massor med singelbord. Även parbord. Hur som haver, Tacos är gott och gör en glad i själen. Ses ikväll ❤️ #tacoslovesyou #love #tacos #valentinesday #tacoday #tacosandtequilagbg" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/d7a1691f997e72bd9992a78f0f1bbf4c/5B21A96F/t51.2885-15/s640x640/sh0.08/e35/27891697_2004913703129708_1636959362473787392_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/0ea67ff0ca584055b9d6785fc387fcb3/5B182412/t51.2885-15/s150x150/e35/27891697_2004913703129708_1636959362473787392_n.jpg"></a></li><li><a title="Fly ifrån snö och slask☃️ ITS TACOTUESDAY 🌮 #tacosandtequilagbg #tequila #margarita #tequila #calle23 #agaveyoumyheart #gemma" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/447ae06d80f54cbfdc115f8325d1f4b7/5B220F4F/t51.2885-15/s640x640/sh0.08/e35/27579072_373087589822435_2849799672359288832_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/8dd75762ee39f349f05ad9337ca59e22/5B06414B/t51.2885-15/s150x150/e35/27579072_373087589822435_2849799672359288832_n.jpg"></a></li><li><a title="Nedräkning! 🍹🍹🍹 Vi bjuder in till ett dunderkalas dagen till ära, så ta med dig alla du känner och fira med oss!🎉 #tacosandtequilagbg #margarita #margaritaday #tequila #fiesta #cointreau" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/6fb6e5de73b4f8f3aa3a47c12872f645/5B0DBC05/t51.2885-15/s640x640/sh0.08/e35/27879144_666484620407726_3499982357182545920_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/4941991fb4c319e702c96e3b3d3e3688/5B140501/t51.2885-15/s150x150/e35/27879144_666484620407726_3499982357182545920_n.jpg"></a></li><li><a title="Direkt från grillen 🌽🌽🌽 #grillcorn #majs #är #nice #padrones #är #gött #vegan #vegetarian #tacos #tacosandtequilagbg" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/404266d28f39e5ece7245e977c6e5243/5B1CCA9E/t51.2885-15/s640x640/sh0.08/e35/27579296_198321124083258_7686550867679379456_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/b95b238e41050dd53563289f5678d62d/5B25779A/t51.2885-15/s150x150/e35/27579296_198321124083258_7686550867679379456_n.jpg"></a></li><li><a title="TACOTUESDAY 🔥🔥🔥#tacotuesday #tacosandtequilagbg #lunch #gbg #ftw" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/d4ef2dae17a9e1b16c6f0dbe71399205/5B1CCD65/t51.2885-15/s640x640/sh0.08/e35/26872176_167900653987848_1699294718216634368_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/ca2f054129dcbed641f2eed94ba7b89e/5B15E061/t51.2885-15/s150x150/e35/26872176_167900653987848_1699294718216634368_n.jpg"></a></li><li><a title="MONDAY AND TIME FOR CHURROS 🍦🍦🍦 #tacosandtequilagbg #churros #icecream #chocolate" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/6b2db0a27dc3af2ad0d631657b10a0b2/5B117FD9/t51.2885-15/s640x640/sh0.08/e35/26868974_1532178373556765_5779332406091710464_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/5cb861f378542c9cf21d26d4a2a5abe1/5B01E8A4/t51.2885-15/s150x150/e35/26868974_1532178373556765_5779332406091710464_n.jpg"></a></li><li><a title="Livet har sina goda stunder!🌮🌮🌮 #tacolov #tacoliv #tacos #sunday #dinner #foodora #tacosandtequilagbg" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/787ead976d9534e36eebd648d3aaa0b5/5B1497D1/t51.2885-15/sh0.08/e35/p640x640/27575859_505363846530837_193000664752717824_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/a3b1c0f17a244cad1ba00c807dc31c1f/5B0CA4AA/t51.2885-15/s150x150/e35/c0.134.1080.1080/27575859_505363846530837_193000664752717824_n.jpg"></a></li><li><a title="DET ÄR TACOFRRREDAG!!🌮🌮🌮🌮#fiesta #fiesta #fiesta #friyay #tacos #rebeccafiona #yoloighe #falafelemma #teamkröka 📸; @miomo" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/6575b235f120563a7e183cdae73e32d2/5B0AA127/t51.2885-15/s640x640/sh0.08/e35/26870920_144832109526188_5779247417278857216_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/c73ac27c67ebe830d9568f5addf3dfef/5B0BE548/t51.2885-15/s150x150/e35/c181.0.718.718/26870920_144832109526188_5779247417278857216_n.jpg"></a></li><li><a title="YES! 🍋🍋🍋 #tacosandtequilagbg #tursday #tequila #margaritas" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/d8f2bdb42fe87ce8fa607c18dc1c8cf3/5B141FFA/t51.2885-15/s640x640/sh0.08/e35/26864979_331808437328364_2728147339335172096_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/c6a607ac6b828ecab083ac0d90970956/5B2570FE/t51.2885-15/s150x150/e35/26864979_331808437328364_2728147339335172096_n.jpg"></a></li><li><a title="Vilket jäkla väder!☔️☔️ Kom in till oss och njut av mexikansk värme och en och annan tequila. #tacosandtequilagbg #tacos #margarita #restaurant #interior #interiör #foodora #filmfestival" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/fc671d4209992fb4ace3e6f23c4aeb97/5B1F934D/t51.2885-15/s640x640/sh0.08/e35/26870008_929657753851989_1766616750033469440_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/33413fc6a01f61f021a4b699723a9fc2/5B099749/t51.2885-15/s150x150/e35/26870008_929657753851989_1766616750033469440_n.jpg"></a></li><li><a title="Tuesdays are for tacos and tequila😎  #tacotruth #tacosandtequilagbg #tacos #lunch #cheese #chili #mexico #cilantro #tuesday" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/88f3c64992f74fdd01cda42e2c6fd08d/5B1319B3/t51.2885-15/s640x640/sh0.08/e35/26871680_200743170479457_6185093226563633152_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/59406941045384b8400cc2a1da30bc71/5B0C6CB7/t51.2885-15/s150x150/e35/26871680_200743170479457_6185093226563633152_n.jpg"></a></li><li><a title="Måndag 🌮🌮🌮 #tacos #tacos #tacos #nyavecka #nyamöjligheter #nyatacos #tacosandtequilagbg #goteborgfilmfestival #tredjelång" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/b669f4caae9a4c98104c42d42e2832e8/5B2195F2/t51.2885-15/s640x640/sh0.08/e35/26374164_1555565167872643_8338607854755774464_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/0362738ee463b695a8aa1f6a015d1669/5B01A48F/t51.2885-15/s150x150/e35/26374164_1555565167872643_8338607854755774464_n.jpg"></a></li><li><a title="Och där kom solen! Fantastiskt! Kom förbi oss på lördagspromenaden och värm er!🥑🧀🌶🌮 #tacosandtequilagbg #sun #tacos #saturday #woopwoop" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/9f2981fd081b95718e482248576434ea/5B187312/t51.2885-15/sh0.08/e35/p640x640/26345922_141727249967145_3782967663437807616_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/8eb8fc7ed6624cbed576aed555e5df3b/5B2027A8/t51.2885-15/s150x150/e35/c0.134.1080.1080/26345922_141727249967145_3782967663437807616_n.jpg"></a></li><li><a title="Lön & Churros🙌🏼 En bättre kombo🍦 #tacotursday #churros #dessert #tacos #tacosandtequilagbg" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/daf374f1cbc3a4672bb9804426ee326b/5B0E22B3/t51.2885-15/s640x640/sh0.08/e35/26433599_227891241088573_8359404786482675712_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/274ba821261cb3d871d1ca64bb48500e/5B170FB7/t51.2885-15/s150x150/e35/26433599_227891241088573_8359404786482675712_n.jpg"></a></li><li><a title="Tacos mitt i veckan 🙌🏼 Lunch från 11:30!🌵🌵🌵Välkomna! #tacosandtequilagbg #mexicanfood #tacos #gbg #lunch #foodora #eat #more #tacos #and #be #happy" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/10ba71f7130abb5d9da4e45832f6c06a/5B0E25BB/t51.2885-15/s640x640/sh0.08/e35/26866875_176316443136264_7456267554630139904_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/64cb4a79aa0faf866e8ad57fb320717c/5B050CBF/t51.2885-15/s150x150/e35/26866875_176316443136264_7456267554630139904_n.jpg"></a></li><li><a title="🌮🌍🌮🌍🌮🌍✌🏼#tacosandtequilagbg #savetheworld #tacos" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/0fb44c9e9e9506793770933cf41371c6/5B0FA334/t51.2885-15/s640x640/sh0.08/e35/26341404_159671151478024_8029011845962530816_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/d23956f92b0eafecac969532167a7590/5B18B430/t51.2885-15/s150x150/e35/26341404_159671151478024_8029011845962530816_n.jpg"></a></li><li><a title="Har du ätit för många tacos i helgen? Nemas problemas! Vi serverar alltid vår Signatur Chili på lunchen✌🏼så kom in i den mexikanska värmen och ät något gott! 🌶 #tacosandtequilagbg #mexicanfood #tacos #gbg #lunch #chili" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/1979edd7666ff5fb9cfe059e4b54746a/5B11A7F3/t51.2885-15/s640x640/sh0.08/e35/26067954_1972402256336728_8638584476835774464_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/cebcb68077ce20f8aac3ba02d270181f/5B169A8E/t51.2885-15/s150x150/e35/26067954_1972402256336728_8638584476835774464_n.jpg"></a></li><li><a title="Fried Fish 🌮 With 🥕 and 🌶 #sunday #sundayfunday #mood #tacos #fish #tacosandtequilagbg #gbgftw #tacosftw #foodora" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/cda97849455a7f8abde630c5e924a55f/5B0B78F2/t51.2885-15/s640x640/sh0.08/e35/26868604_146023699526052_7436783465556606976_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/f217c9194a4fef866924342d56edbb45/5B0979F6/t51.2885-15/s150x150/e35/26868604_146023699526052_7436783465556606976_n.jpg"></a></li><li><a title="Nu laddar vi upp ordentligt inför fredagsservice! Äntligen är bästa dagen här! 🌮🌮🌮🌮 #tacofredag #tacosandtequilagbg #tacokitchen" class="swipebox_grid" data-video="yes" href="https://scontent.cdninstagram.com/vp/7204bb3654c436f340d8092074c34016/5A87309A/t50.2886-16/26878760_564005380623397_4424209321567453184_n.mp4"><img  src="https://scontent.cdninstagram.com/vp/2a53518bb26fdb3f5a5c754a49ee62b5/5A86C8BD/t51.2885-15/s150x150/e15/c0.76.612.612/26866766_321772698310268_4341411015049609216_n.jpg"><img src="https://scontent.cdninstagram.com/vp/2a53518bb26fdb3f5a5c754a49ee62b5/5A86C8BD/t51.2885-15/s150x150/e15/c0.76.612.612/26866766_321772698310268_4341411015049609216_n.jpg"></a></li><li><a title="Det är T A C O F R E D A G! Follow your dreams 🌮🍾✨ #tacosandtequilagbg #tacofredag #friyay #dream" class="swipebox_grid" data-video="no" href="https://scontent.cdninstagram.com/vp/0f2fbf96e71f75a52981bbd5411cbdfa/5B1BE9C7/t51.2885-15/sh0.08/e35/p640x640/26264160_175915606348227_6413534604233277440_n.jpg"><img  src="https://scontent.cdninstagram.com/vp/c01b034bd2233ff0c4647a4c3ae21acc/5B0CD20D/t51.2885-15/s150x150/e35/c0.135.1080.1080/26264160_175915606348227_6413534604233277440_n.jpg"></a></li></ul></div>
+<img class="aligncenter size-full wp-image-943" src="https://www.tacosandtequila.se/wp-content/uploads/2012/05/hashtag1.png" alt="hashtag" width="283" height="78" />
+<p>&nbsp;</p>
+                        
+                        <div class="clear"></div>
+
+
+<!-- You can start editing here. -->
+
+
+		<!-- If comments are closed. -->
+	<!--<p class="nocomments">Comments are closed.</p>-->
+
+	
+
+
+	
+					</div>
+				</div><!-- .post -->
+                
+            
+</div>                        
+					</div>
+                    <!-- End content -->
+                    
+                    </div>
+					<!-- End container -->
+                                        
+                    								 
+                    </div>
+                    <!-- End vertical wrapper -->
+                    
+                                        
+             <div class="vertical-wrapper 63">
+
+              	<div id="container-63" data-name="contact" class="container ">
+                         
+                	<div class="clear-top"></div>
+                	
+              		<div class="content">
+                    
+                    	
+                            
+						<div class="row">
+			            
+                
+				<div class="twelve columns" id="post-63">
+	                
+					<div class="entry-content">
+	
+	                    <p>&nbsp;</p>
+<img src="https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-contact.png" alt="" width="528" height="41" class="aligncenter size-full wp-image-1550" srcset="https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-contact.png 1056w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-contact-300x23.png 300w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-contact-768x60.png 768w, https://www.tacosandtequila.se/wp-content/uploads/2016/05/head-contact-1024x80.png 1024w" sizes="(max-width: 528px) 100vw, 528px" />
+<p>&nbsp;</p>
+<img class="aligncenter size-full wp-image-901" src="https://www.tacosandtequila.se/wp-content/uploads/2012/05/karta.png" alt="karta" width="963" height="404" srcset="https://www.tacosandtequila.se/wp-content/uploads/2012/05/karta.png 963w, https://www.tacosandtequila.se/wp-content/uploads/2012/05/karta-300x125.png 300w" sizes="(max-width: 963px) 100vw, 963px" />
+<div class="one_third column" style="float:;">
+<h3><strong>CONTACT INFO</strong></h3>
+<p style="font-family: Special Elite; font-size: 14px;">No reservations, drop-ins only. Tacos &amp; Tequila is a cash free restaurant.</p>
+<p style="font-family: Special Elite; font-size: 14px;"><span class="accent">★</span> Tredje Långgatan 9, Göteborg</p>
+<p style="font-family: Special Elite; font-size: 14px;"><span class="accent">★</span> +46 (0)31 &#8211; 309 52 20</p>
+<p style="font-family: Special Elite; font-size: 14px;"><span class="accent">★</span> <a href="/cdn-cgi/l/email-protection#660f080009261207050915070802120317130f0a07481503"><span class="__cf_email__" data-cfemail="d7beb9b1b897a3b6b4b8a4b6b9b3a3b2a6a2bebbb6f9a4b2">[email&#160;protected]</span></a></p>
+</div>
+<div class="one_third column" style="float:;">
+<h3><strong>OPENING HOURS</strong></h3>
+<p style="font-family: Special Elite; font-size: 14px;"><strong><span class="accent">LUNCH</span></strong><br />
+Monday &#8211; Friday 11:30 &#8211; 14.00</p>
+<p style="font-family: Special Elite; font-size: 14px;"><strong><span class="accent">DINNER &amp; DRINKS</span></strong><br />
+Monday &#8211; Friday 17:00 &#8211; late<br />
+Saturday 13:00 &#8211; 01:00<br />
+Sunday 13:00 &#8211; late</p>
+</div>
+<div class="one_third column last" style="float:;">
+<h3><strong>SOCIAL MEDIA</strong></h3>
+<p style="font-family: Special Elite; font-size: 14px;"><span class="accent">★</span> <a href="https://www.facebook.com/tacosandtequilagbg" target="_blank" rel="noopener">facebook.com/tacosandtequilagbg</a></p>
+<p style="font-family: Special Elite; font-size: 14px;"><span class="accent">★</span> <a href="https://instagram.com/tacos_tequila" target="_blank" rel="noopener">instagram.com/tacos_tequila</a></p>
+<p style="font-family: Special Elite; font-size: 14px;"><span class="accent">★</span> #TacosAndTequilaGbg</p>
+</div>
+<div class="clearboth"></div>
+                        
+                        <div class="clear"></div>
+
+
+<!-- You can start editing here. -->
+
+
+		<!-- If comments are closed. -->
+	<!--<p class="nocomments">Comments are closed.</p>-->
+
+	
+
+
+	
+					</div>
+				</div><!-- .post -->
+                
+            
+</div>                        
+					</div>
+                    <!-- End content -->
+                    
+                    </div>
+					<!-- End container -->
+                                        
+                    								 
+                    </div>
+                    <!-- End vertical wrapper -->
+                    
+              
+
+	<div class="vertical-wrapper">
+		<div id="dynamic" class="container">
+                    <div class="row"><span id="dynamic-close"></span></div>
+                    <div class="clear-top"></div>
+			
+                    <div class="content">
+
+                    </div>
+                </div>
+        </div>    
+    <div class="push"></div>
+</div>
+    
+<div id="scroll-top">
+	<a href="#top"><span></span></a>	
+</div>	
+
+
+<div class="clear"></div>
+
+			<footer role="contentinfo" class="content">
+			                <div id="footer-copy">
+                	
+                    <div class="row">
+		    <p style="text-align: center;font-family: Special Elite;font-size: 12px;padding-top: 20px;letter-spacing: 1px"><span style="color: #ffffff"><strong>Tacos &amp; Tequila, Tredje Långgatan 9, Göteborg</strong></span>
+                    </div>
+                </div>
+                    
+				
+				
+				
+			</footer> <!-- end footer -->
+		
+		
+		
+		<!--[if lt IE 7 ]>
+  			<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+  			<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+		<![endif]-->
+		
+		
+
+                <script data-cfasync="false" src="/cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
+
+                
+    
+/*-----------------------------------------------------------------------------------
+
+ 	Page Scrolling
+ 
+-----------------------------------------------------------------------------------*/
+	
+        // If slide or load is set in URL, scroll to it
+        jQuery(document).ready(function($) { 
+                           
+                
+                           
+        });
+
+        // For top navigation
+	jQuery(document).ready(function($) {  
+            
+
+		jQuery('#nav a[href^="https://www.tacosandtequila.se"]:not(.separate)').click(function (e) {  
+                        e.preventDefault();
+			jQuery(window).clearQueue(); // Prevent scroll queue from building up
+                        var divID = '#' + jQuery(this).attr('data-slide');
+			var header = $('header[role="banner"]');
+			var offsetHeight = -50;
+			if (header.css('position') == 'absolute' || header.css('display') == 'none') { offsetHeight = 0; };
+                        if(jQuery(divID).length){
+			jQuery(window).scrollTo(divID, {duration:1600, easing:'jswing', offset:offsetHeight, axis:'y' }, {queue:false});
+			}
+                        // If custom menu is used with div not on page
+                       	else { 
+                            targetDiv = $('#dynamic'); 
+                            targetDiv.css('display', 'block');
+                            targetDiv.height(2000);
+                            jQuery(window).clearQueue(); // Prevent scroll queue from building up
+                            jQuery(window).scrollTo(targetDiv, {duration:1600, easing:'jswing', offset:offsetHeight, axis:'y' }, {queue:false});
+                            targetDiv.showLoading();
+                            var path = $(this).attr('href');
+                            var title = $(this).text();
+                            targetDiv.find('.content').load(path + ' #content', {limit: 25}, function(responseText, textStatus, req) {
+
+                            if (textStatus == "error") {
+                              return "It seems we've encountered an error...";
+                            }
+
+                            /*-----------------------------------------------------------------------------------
+
+                                    Toggles & Accordions (AJAX)
+
+                            -----------------------------------------------------------------------------------*/
+
+                            $(function(){ // run after page loads
+                                            $(".toggle_container").hide(); 
+                                            //Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
+                            });
+
+                            jQuery(".accordion").accordion()
+
+
+                            /*-----------------------------------------------------------------------------------
+
+                                    Tabs (AJAX)
+
+                            -----------------------------------------------------------------------------------*/
+
+                            $('ul.tabs').each(function(i) {
+                                    //Get all tabs
+                                    var tab = $(this).find('> li > a');
+                                    $(this).find('li:first').addClass("active").fadeIn('fast'); //Activate first tab
+                                    $(this).find("li:first a").addClass("active").fadeIn('fast'); //Activate first tab
+                                    $(this).next().find("li:first").addClass("active").fadeIn('fast'); //Activate first tab
+
+                                    tab.click(function(e) {
+
+                                            //Get Location of tab's content
+                                            var contentLocation = $(this).attr('href') + "Tab";
+
+                                            //Let go if not a hashed one
+                                            if(contentLocation.charAt(0)=="#") {
+
+                                                    e.preventDefault();
+
+                                                    //Make Tab Active
+                                                    tab.removeClass('active');
+                                                    $(this).parent().addClass('active');
+
+                                                    //Show Tab Content & add active class
+                                                    $(contentLocation).show().addClass('active').siblings().hide().removeClass('active');
+
+                                            } 
+                                    });
+                            }); 
+
+                    /*-----------------------------------------------------------------------------------
+
+                            Sliders (AJAX)
+
+                    -----------------------------------------------------------------------------------*/
+
+
+                    
+                                           
+                                              jQuery('.slider-848').flexslider({
+                                                    animation: "fade",
+                                                    easing: "swing",
+                                                    direction: "horizontal",
+                                                    slideshowSpeed: "6000",
+                                                    animationSpeed: "5000",
+                                                    controlNav: true,               
+                                                    directionNav: false,  
+                                                    pauseOnAction: false,
+                                                    pauseOnHover: false,
+                                                    useCSS: false
+                                              });
+                                           
+
+                                                        
+                            /*-----------------------------------------------------------------------------------
+
+                                    PrettyPhoto (AJAX)
+
+                            -----------------------------------------------------------------------------------*/
+                            <!-- Makes all photos use PrettyPhoto -->
+                            /*$("a[href$='.jpg'], a[href$='.jpeg'], a[href$='.gif'], a[href$='.png']").prettyPhoto({
+                                    overlay_gallery: false /* If set to true, a gallery will overlay the fullscreen image on mouse over 
+                            });*/
+                            $("a[rel^='prettyPhoto']").prettyPhoto({
+                                    overlay_gallery: false /* If set to true, a gallery will overlay the fullscreen image on mouse over */
+                             });
+
+
+                            targetDiv.hideLoading();
+                            targetDiv.height('auto');
+                        });
+                      }
+		}); 
+	});
+	
+	jQuery(document).ready(function($){
+	
+		// hide #back-top first
+		$("#scroll-top").hide();
+
+		
+		// fade in #back-top
+		$(function () {
+			$(window).scroll(function () {
+				if ($(this).scrollTop() > 100) {
+					$('#scroll-top').fadeIn();
+				} else {
+					$('#scroll-top').fadeOut();
+				}
+			});
+	
+			// scroll body to 0px on click
+			$('#scroll-top a').click(function () {
+				$('body,html').animate({
+					scrollTop: 0
+				}, 1800);
+				return false;
+			});
+		});
+		
+                // close portfolio button
+                $('#portfolio-close').click(function () {
+                        $('#portfolio-loader').slideUp(600);
+                        return false;
+                });
+                // close portfolio button
+                $('#dynamic-close').click(function () {
+                        $('#dynamic').slideUp(600);
+                        return false;
+                });                
+
+                //  Add active class to current page or section
+                if( $("html").is(".ie8, .ie7") ) {}
+                else {
+                    jQuery(window).scroll(function () {
+                      var inview = $('.container:in-viewport:first').attr('id'),
+                          $link = $('#nav li a').filter('[data-slide=' + inview + ']');
+
+                      if ($link.length && !$link.parent().is('.active')) {
+                        $('#nav li').removeClass('active');
+                        $link.parent().addClass('active');   
+                        $link.parent().parents('li').addClass('active');   
+                      }
+                    });
+                    jQuery(window).scroll();
+                }
+                
+
+
+	});
+	
+	
+/*-----------------------------------------------------------------------------------
+
+ 	AJAX Page Loading
+ 
+-----------------------------------------------------------------------------------*/
+
+jQuery(document).ready(function($) {
+		
+    // If the link is on site, load it via AJAX
+    $('.content a[href^="https://www.tacosandtequila.se"]:not(.separate, .meta a, .post-edit-link, .comment-reply-link, #cancel-comment-reply-link, .flex-next, .flex-prev):not(.separate1 a, .separate2 a), .content a[href^="/"]:not(.separate, .meta a, .post-edit-link, .comment-reply-link, #cancel-comment-reply-link, .flex-next, .flex-prev)').live('click', function(e) {
+        e.preventDefault();
+		var dataSlide = $(this).attr('data-slide');
+		var targetDiv;
+		var header = $('header[role="banner"]');
+		var offsetHeight = -50;
+		if (header.css('position') == 'absolute' || header.css('display') == 'none') { offsetHeight = 0; };
+		if (typeof dataSlide !== 'undefined' && dataSlide !== false) { jQuery(window).scrollTo('div[data-name='+dataSlide+']', {duration:1600, easing:'jswing', offset:offsetHeight, axis:'y'}, {queue:false}); return false;}
+		else if($(this).hasClass('page-nav-link')) { 
+			targetDiv = $(this).closest('.container'); 
+			jQuery(window).clearQueue(); // Prevent scroll queue from building up
+			jQuery(window).scrollTo(targetDiv, {duration:1600, easing:'jswing', offset:offsetHeight, axis:'y'}, {queue:false});
+                        targetDiv.showLoading();
+                }
+		else if($(this).hasClass('portfolio-link')) {
+                        var portfolio = true;
+			targetDiv = $('#portfolio-loader'); 
+                        targetDiv.slideUp(300);
+		}
+		else { 
+			targetDiv = $('#dynamic'); 
+			targetDiv.css('display', 'block');
+			targetDiv.height(2000);
+			jQuery(window).clearQueue(); // Prevent scroll queue from building up
+			jQuery(window).scrollTo(targetDiv, {duration:1600, easing:'jswing', offset:offsetHeight, axis:'y'}, {queue:false});
+                        targetDiv.showLoading();
+                }
+		
+        var path = $(this).attr('href');
+        var title = $(this).text();
+		targetDiv.find('.content').load(path + ' #content', {limit: 25}, function(responseText, textStatus, req) {
+			
+			if (textStatus == "error") {
+			  return "It seems we've encountered an error...";
+			}
+		
+			/*-----------------------------------------------------------------------------------
+
+				Toggles & Accordions (AJAX)
+			 
+			-----------------------------------------------------------------------------------*/
+			
+			$(function(){ // run after page loads
+					$(".toggle_container").hide(); 
+					//Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
+			});
+		
+			jQuery(".accordion").accordion()
+			
+			
+			/*-----------------------------------------------------------------------------------
+
+				Tabs (AJAX)
+			 
+			-----------------------------------------------------------------------------------*/
+		
+                        targetDiv.find('ul.tabs').each(function(i) {
+                                //Get all tabs
+                                var tab = $(this).find('> li > a');
+                                $(this).find('li:first').addClass("active").fadeIn('fast'); //Activate first tab
+                                $(this).find("li:first a").addClass("active").fadeIn('fast'); //Activate first tab
+                                $(this).next().find("li:first").addClass("active").fadeIn('fast'); //Activate first tab
+
+                                tab.click(function(e) {
+
+                                        //Get Location of tab's content
+                                        var contentLocation = $(this).attr('href') + "Tab";
+
+                                        //Let go if not a hashed one
+                                        if(contentLocation.charAt(0)=="#") {
+
+                                                e.preventDefault();
+
+                                                //Make Tab Active
+                                                tab.parent().removeClass('active');
+                                                $(this).parent().addClass('active');
+
+                                                //Show Tab Content & add active class
+                                                $(contentLocation).show().addClass('active').siblings().hide().removeClass('active');
+
+                                        } 
+                                });
+                        }); 
+			
+			
+
+                    /*-----------------------------------------------------------------------------------
+
+                            Sliders (AJAX)
+
+                    -----------------------------------------------------------------------------------*/
+
+
+                    
+                                           
+                                              jQuery('.slider-848').flexslider({
+                                                    animation: "fade",
+                                                    easing: "swing",
+                                                    direction: "horizontal",
+                                                    slideshowSpeed: "6000",
+                                                    animationSpeed: "5000",
+                                                    controlNav: true,               
+                                                    directionNav: false,  
+                                                    pauseOnAction: false,
+                                                    pauseOnHover: false,
+                                                    useCSS: false
+                                              });
+                                           
+
+                                                        
+
+			/*-----------------------------------------------------------------------------------
+
+				PrettyPhoto (AJAX)
+			 
+			-----------------------------------------------------------------------------------*/
+			<!-- Makes all photos use PrettyPhoto -->
+			/*$("a[href$='.jpg'], a[href$='.jpeg'], a[href$='.gif'], a[href$='.png']").prettyPhoto({
+		   		overlay_gallery: false /* If set to true, a gallery will overlay the fullscreen image on mouse over 
+		   	});*/
+		 	$("a[rel^='prettyPhoto']").prettyPhoto({
+			 	overlay_gallery: false /* If set to true, a gallery will overlay the fullscreen image on mouse over */
+			 });
+			 
+			 
+			targetDiv.hideLoading();
+			targetDiv.height('auto');
+                        if(portfolio) { 
+                            targetDiv.slideToggle(1000); 
+                            offsetHeight = offsetHeight * 2;
+                            jQuery(window).clearQueue(); // Prevent scroll queue from building up
+                            jQuery(window).scrollTo(targetDiv, {duration:1600, easing:'jswing', offset: offsetHeight, axis:'y'}, {queue:false});
+                        }
+                        portfolio = false;
+		});
+    });
+	
+/*-----------------------------------------------------------------------------------
+
+	AJAX Search Form
+ 
+-----------------------------------------------------------------------------------*/
+    $('#searchform, #noresults-searchform, #error404-searchform').live('submit', $(this), function(event) {
+        event.preventDefault();
+		targetDiv = $('#dynamic');
+		targetDiv.css('display', 'block');
+		targetDiv.height(2000);
+		var header = $('header[role="banner"]');
+		var offsetHeight = -50;
+		if (header.css('position') == 'absolute' || header.css('display') == 'none') { offsetHeight = 0; };
+		jQuery(window).clearQueue(); // Prevent scroll queue from building up
+		jQuery(window).scrollTo(targetDiv, {duration:1600, easing:'jswing', offset:offsetHeight, axis:'y'}, {queue:false});
+		targetDiv.showLoading();
+		var data =$(this).serialize();
+		var path = "https://www.tacosandtequila.se?"+data;
+		targetDiv.find('.content').load(path + ' #content', {limit: 25}, function(responseText, textStatus, req) {
+			
+			targetDiv.hideLoading();
+			targetDiv.height('auto');
+			
+			//Prettyphoto for search results
+			 $("a[rel^='prettyPhoto']").prettyPhoto({
+			 	overlay_gallery: false /* If set to true, a gallery will overlay the fullscreen image on mouse over */
+			 });
+			 <!-- End AJAX PrettyPhoto -->
+
+		});
+		
+    });
+    
+
+/*-----------------------------------------------------------------------------------
+
+ 	AJAX Commenting
+ 
+-----------------------------------------------------------------------------------*/
+
+		$('[id=commentform]').live( 'submit', $(this), function(event){
+				event.preventDefault();
+				
+				var statusdiv=$('.comment-status', this); // define the infopanel
+				//serialize and store form data in a variable
+				var formdata=$(this).serialize();
+				//Add a status message
+				statusdiv.html('<p>Processing...</p>');
+				//Extract action URL from commentform
+				var formurl=$(this).attr('action');
+				//Post Form with data
+				$.ajax({
+					type: 'post',
+					url: formurl,
+					data: formdata,
+					error: function(XMLHttpRequest, textStatus, errorThrown){
+						statusdiv.html('<p class="error" >You might have left one of the fields blank, or be posting too quickly</p>');
+					},
+					success: function(data, textStatus){
+						var trimmedData = $.trim(data);
+						if(trimmedData == "success") {
+							statusdiv.html('<p class="success" >Thanks for your comment. We appreciate your response.</p>');
+						}
+						else {
+							statusdiv.html('<p class="error" >Please wait a while before posting your next comment</p>');
+						}
+					}
+				});
+				return false;
+			
+		});
+		
+	
+});
+	
+
+
+/*-----------------------------------------------------------------------------------
+
+ 	PrettyPhoto
+ 
+-----------------------------------------------------------------------------------*/
+	jQuery(document).ready(function($) {
+		<!-- Uncomment below to make all photos use PrettyPhoto -->
+	    /*$("a[href$='.jpg'], a[href$='.jpeg'], a[href$='.gif'], a[href$='.png']").prettyPhoto({
+		   overlay_gallery: false /* If set to true, a gallery will overlay the fullscreen image on mouse over 
+		   });*/
+		 $("a[rel^='prettyPhoto']").prettyPhoto({
+                         deeplinking:false,
+			 overlay_gallery: false /* If set to true, a gallery will overlay the fullscreen image on mouse over */
+		});
+	})
+	
+
+
+jQuery(document).ready(function($) {
+
+
+/*-----------------------------------------------------------------------------------
+
+ 	Toggles & Accordions
+ 
+-----------------------------------------------------------------------------------*/
+	
+	jQuery(".accordion").accordion()
+	
+	$(function(){ // run after page loads
+			$(".toggle_container").hide(); 
+			//Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
+			$("p.trigger").live('click', function(){
+				$(this).toggleClass("active").next().slideToggle("normal");
+				return false; //Prevent the browser jump to the link anchor
+			});
+	});
+
+
+/*-----------------------------------------------------------------------------------
+
+ 	Tabs 
+ 
+-----------------------------------------------------------------------------------*/
+
+	$('ul.tabs').each(function(i) {
+		//Get all tabs
+		var tab = $(this).find('> li > a');
+		$(this).find('li:first').addClass("active").fadeIn('fast'); //Activate first tab
+		$(this).find("li:first a").addClass("active").fadeIn('fast'); //Activate first tab
+		$(this).next().find("li:first").addClass("active").fadeIn('fast'); //Activate first tab
+		
+		tab.click(function(e) {
+			
+			//Get Location of tab's content
+			var contentLocation = $(this).attr('href') + "Tab";
+			
+			//Let go if not a hashed one
+			if(contentLocation.charAt(0)=="#") {
+			
+				e.preventDefault();
+			
+				//Make Tab Active
+				tab.parent().removeClass('active');
+				$(this).parent().addClass('active');
+				
+				//Show Tab Content & add active class
+				$(contentLocation).show().addClass('active').siblings().hide().removeClass('active');
+				
+			} 
+		});
+	}); 
+	
+});  //End Document Ready
+
+
+/*-----------------------------------------------------------------------------------
+
+ 	Sliders
+ 
+-----------------------------------------------------------------------------------*/
+
+
+			
+			jQuery(window).load(function($){
+			  jQuery('.slider-848').flexslider({
+				animation: "fade",
+				easing: "swing",
+				direction: "horizontal",
+				slideshowSpeed: "6000",
+				animationSpeed: "5000",
+				controlNav: true,               
+				directionNav: false,  
+				pauseOnAction: false,
+				pauseOnHover: false,
+				useCSS: false
+			  });
+			});
+
+			
+/*-----------------------------------------------------------------------------------
+
+ 	Responsive Navigation
+ 
+-----------------------------------------------------------------------------------*/
+	jQuery(window).load(function($) {
+		jQuery("[role='navigation']").flexNav(); 
+	});
+
+
+		
+/*-----------------------------------------------------------------------------------
+
+ 	Portfolio Filtering
+ 
+-----------------------------------------------------------------------------------*/
+jQuery(document).ready(function($) {
+  $.Isotope.prototype._getCenteredMasonryColumns = function() {
+    this.width = this.element.width();
+    
+    var parentWidth = this.element.parent().width();
+    
+                  // i.e. options.masonry && options.masonry.columnWidth
+    var colW = this.options.masonry && this.options.masonry.columnWidth ||
+                  // or use the size of the first item
+                  this.$filteredAtoms.outerWidth(true) ||
+                  // if there's no items, use size of container
+                  parentWidth;
+    
+    var cols = Math.floor( parentWidth / colW );
+    cols = Math.max( cols, 1 );
+
+    // i.e. this.masonry.cols = ....
+    this.masonry.cols = cols;
+    // i.e. this.masonry.columnWidth = ...
+    this.masonry.columnWidth = colW;
+  };
+  
+  $.Isotope.prototype._masonryReset = function() {
+    // layout-specific props
+    this.masonry = {};
+    // FIXME shouldn't have to call this again
+    this._getCenteredMasonryColumns();
+    var i = this.masonry.cols;
+    this.masonry.colYs = [];
+    while (i--) {
+      this.masonry.colYs.push( 0 );
+    }
+  };
+
+  $.Isotope.prototype._masonryResizeChanged = function() {
+    var prevColCount = this.masonry.cols;
+    // get updated colCount
+    this._getCenteredMasonryColumns();
+    return ( this.masonry.cols !== prevColCount );
+  };
+  
+  $.Isotope.prototype._masonryGetContainerSize = function() {
+    var unusedCols = 0,
+        i = this.masonry.cols;
+    // count unused columns
+    while ( --i ) {
+      if ( this.masonry.colYs[i] !== 0 ) {
+        break;
+      }
+      unusedCols++;
+    }
+    
+    return {
+          height : Math.max.apply( Math, this.masonry.colYs ),
+          // fit container to columns that have been used;
+          width : (this.masonry.cols - unusedCols) * this.masonry.columnWidth
+        };
+  };
+
+ 	
+
+		
+
+	
+
+    (function() {
+
+                            var $container = $('#portfolio-container');
+
+                            $(window).on('load', function() {
+                                    // initialize Isotope
+                                    $container.isotope({
+                                      // options...
+                                      resizable: false // disable normal resizing
+
+                                    });
+                            });
+
+                            // update columnWidth on window resize
+                            $(window).smartresize(function(){
+                              $container.isotope({
+                                    // update columnWidth to a percentage of container width
+
+                              });
+                            });
+
+                            // filter items when filter link is clicked
+                            $('#filter a').click(function(){
+                              var selector = $(this).attr('data-filter');
+                                                                                                                  $('#portfolio-container .isotope-item a:first-child').attr('rel', 'prettyPhoto[gallery]');
+                                      $('#portfolio-container ' + selector + ' a:first-child').attr('rel', 'prettyPhoto[active]');
+                                                                            $container.isotope({         
+                                                    filter: selector,
+                                                    animationOptions: {
+                                                                    duration: 750,
+                                                                    easing: 'linear',
+                                                                    queue: false
+                                                                    } 
+                                       });
+                              return false;
+                            });
+
+    })();
+
+});
+
+/*-----------------------------------------------------------------------------------
+
+ 	Portfolio Captions
+ 
+-----------------------------------------------------------------------------------*/
+
+ 	jQuery(document).ready(function($) {
+       $(document).ready(function(){
+			$('.caption').hide();
+			$('#portfolio-container .element').hover(function () {
+			$('.caption', this).stop().fadeTo('slow', 1.0);
+				},
+			function () {
+				$('.caption', this).stop().fadeTo('slow', 0); 
+			});
+        });
+	});
+	
+	
+/*-----------------------------------------------------------------------------------
+
+ 	Custom User JS
+ 
+-----------------------------------------------------------------------------------*/
+
+
+</script>                    
+                <script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.tacosandtequila.se\/index.php?rest_route=\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.0'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-content/themes/quickstep//js/jquery.scrollTo.js?ver=4.9.3'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-content/themes/quickstep//js/jquery.easing.1.3.js?ver=4.9.3'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-content/themes/quickstep//js/jquery.showLoading.js?ver=4.9.3'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-content/themes/quickstep//js/jquery.prettyPhoto.js?ver=4.9.3'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-includes/js/jquery/ui/tabs.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-includes/js/jquery/ui/accordion.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-content/themes/quickstep//js/jquery.flexslider.js?ver=4.9.3'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-content/themes/quickstep//js/jquery.flexnav.js?ver=4.9.3'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-content/themes/quickstep//js/jquery.isotope.min.js?ver=4.9.3'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-content/themes/quickstep//js/jquery.viewport.mini.js?ver=4.9.3'></script>
+<script type='text/javascript' src='https://www.tacosandtequila.se/wp-includes/js/wp-embed.min.js?ver=4.9.3'></script>
+
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"0e1d8c793a","applicationID":"8269287","transactionName":"NlBVYUtXWRFXUkcPDA8adlZNX1gMGVhdAgYZ","queueTime":0,"applicationTime":587,"atts":"GhdWFwNNSh8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html>

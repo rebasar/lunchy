@@ -9,12 +9,12 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
+import org.jsoup.nodes.TextNode;
 import org.jsoup.select.Elements;
 
 import javax.inject.Inject;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 import java.util.OptionalInt;
 import java.util.regex.Pattern;
 
@@ -31,9 +31,9 @@ public class TacosAndTequila implements Parser {
     @Override
     public List<Lunch> parse(final String input) {
         final Document document = Jsoup.parse(input);
-        final Elements containters = document.body().select("div.three_fifth.column");
-        if (containters.isEmpty()) return Collections.emptyList();
-        final Element lunchMenuContainer = containters.first();
+        final Elements containers = document.body().select("div.three_fifth.column");
+        if (containers.isEmpty()) return Collections.emptyList();
+        final Element lunchMenuContainer = containers.first();
         final Element menuItemsContainer = lunchMenuContainer.select("p").first();
         if (menuItemsContainer == null) return Collections.emptyList();
         final Elements menuItems = menuItemsContainer.select("span[style*=\"color: #f7941e\"]");
@@ -58,9 +58,17 @@ public class TacosAndTequila implements Parser {
 
     private LunchItem parseMenuItem(final OptionalInt price, final Element element) {
         final String title = element.text().replace(":", "");
-        final Optional<String> description = Optional.ofNullable(element.nextSibling())
-                                                     .map(Node::outerHtml)
-                                                     .map(String::trim);
+        final String description = parseDescription(element);
         return LunchItem.builder().title(title).description(description).price(price).build();
+    }
+
+    private String parseDescription(final Element element) {
+        Node current = element.nextSibling();
+        final StringBuilder stringBuilder = new StringBuilder();
+        while (current != null && !current.nodeName().equals("span")) {
+            if (current instanceof TextNode) stringBuilder.append(((TextNode) current).getWholeText());
+            current = current.nextSibling();
+        }
+        return stringBuilder.toString().trim();
     }
 }

@@ -8,7 +8,7 @@ import java.time.LocalDate
 
 class TacosAndTequilaTest extends Specification {
 
-    def "Parse successfully parses correct content"(){
+    def "Parse successfully parses correct content"() {
         given: "A test file with valid content"
         def contents = this.getClass().getResource("/testData/tacos/valid.html").text
         and: "A Tacos & Tequila Parser"
@@ -20,7 +20,7 @@ class TacosAndTequilaTest extends Specification {
         lunches.size() == 1
         def lunch = lunches[0]
         lunch.items.size() == 5
-        lunch.items.stream().allMatch({ item -> item.price == OptionalInt.of(98)})
+        lunch.items.stream().allMatch({ item -> item.price == OptionalInt.of(98) })
         lunch.isValidAt(calculator.getDayOfWeek(DayOfWeek.MONDAY))
         lunch.isValidAt(calculator.getDayOfWeek(DayOfWeek.TUESDAY))
         lunch.isValidAt(calculator.getDayOfWeek(DayOfWeek.WEDNESDAY))
@@ -28,7 +28,7 @@ class TacosAndTequilaTest extends Specification {
         lunch.isValidAt(calculator.getDayOfWeek(DayOfWeek.FRIDAY))
     }
 
-    def "Parse successfully parses valid file with missing price"(){
+    def "Parse successfully parses valid file with missing price"() {
         given: "A test file with valid content but missing price"
         def contents = this.getClass().getResource("/testData/tacos/valid_missing_price.html").text
         and: "A Tacos & Tequila Parser"
@@ -40,10 +40,10 @@ class TacosAndTequilaTest extends Specification {
         lunches.size() == 1
         def lunch = lunches[0]
         lunch.items.size() == 5
-        lunch.items.stream().allMatch({ item -> !item.price.present})
+        lunch.items.stream().allMatch({ item -> !item.price.present })
     }
 
-    def "Parse produces empty content on missing root element"(){
+    def "Parse produces empty content on missing root element"() {
         given: "A test file with missing root element"
         def contents = this.getClass().getResource("/testData/tacos/invalid_missing_root_element.html").text
         and: "A Tacos & Tequila Parser"
@@ -55,7 +55,7 @@ class TacosAndTequilaTest extends Specification {
         lunches.size() == 0
     }
 
-    def "Parse produces empty content if all items are missing"(){
+    def "Parse produces empty content if all items are missing"() {
         given: "A test file with missing root element"
         def contents = this.getClass().getResource("/testData/tacos/invalid_changed_styles.html").text
         and: "A Tacos & Tequila Parser"
@@ -65,6 +65,23 @@ class TacosAndTequilaTest extends Specification {
         def lunches = parser.parse(contents)
         then: "The result should be empty"
         lunches.size() == 0
+    }
+
+    def "Parse ignores the junk around menu items"() {
+        given: "A test file with the Meat Taco containing some extra junk"
+        def contents = this.getClass().getResource("/testData/tacos/valid_with_junk_on_meat_item.html").text
+        and: "A Tacos & Tequila Parser"
+        def calculator = new DateCalculator(LocalDate.now())
+        def parser = new TacosAndTequila(calculator)
+        when: "The file is parsed"
+        def lunches = parser.parse(contents)
+        then: "The meat taco should be correctly parsed"
+        def lunch = lunches[0]
+        lunch.items.stream().
+                anyMatch({ item ->
+                    item.description.map({ description -> description == "Chicken bbq, plain mayo and caramelized onions" }).
+                            orElse(false)
+                })
     }
 
 }
