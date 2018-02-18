@@ -1,6 +1,7 @@
 package net.rebworks.lunchy.domain.parsers
 
 import net.rebworks.lunchy.domain.date.DateCalculator
+import net.rebworks.lunchy.domain.parsers.util.SwedishTitleDescriptionSplitter
 import spock.lang.Specification
 
 import java.time.LocalDate
@@ -11,7 +12,8 @@ class BangkokKitchenTest extends Specification {
         def contents = this.getClass().getResource("/testData/bkk/valid.html").text
         and: "A Bangkok Kitchen Parser"
         def dateCalculator = new DateCalculator(LocalDate.now())
-        def parser = new BangkokKitchen(dateCalculator)
+        def titleDescriptionSplitter = new SwedishTitleDescriptionSplitter();
+        def parser = new BangkokKitchen(dateCalculator, titleDescriptionSplitter)
         when: "The file is parsed"
         def lunches = parser.parse(contents)
         then: "The resulting object should contain five days of lunch"
@@ -31,7 +33,8 @@ class BangkokKitchenTest extends Specification {
         def contents = this.getClass().getResource("/testData/bkk/invalid_different_id.html").text
         and: "A Bangkok Kitchen parser"
         def dateCalculator = new DateCalculator(LocalDate.now())
-        def parser = new BangkokKitchen(dateCalculator)
+        def titleDescriptionSplitter = new SwedishTitleDescriptionSplitter();
+        def parser = new BangkokKitchen(dateCalculator, titleDescriptionSplitter)
         when: "The file is parsed"
         def lunches = parser.parse(contents)
         then: "The result should be an empty list"
@@ -43,7 +46,8 @@ class BangkokKitchenTest extends Specification {
         def contents = this.getClass().getResource("/testData/bkk/valid_missing_price.html").text
         and: "A Bangkok Kitchen parser"
         def dateCalculator = new DateCalculator(LocalDate.now())
-        def parser = new BangkokKitchen(dateCalculator)
+        def titleDescriptionSplitter = new SwedishTitleDescriptionSplitter();
+        def parser = new BangkokKitchen(dateCalculator, titleDescriptionSplitter)
         when: "The file is parsed"
         def lunches = parser.parse(contents)
         then: "Results should exist"
@@ -54,16 +58,4 @@ class BangkokKitchenTest extends Specification {
                 allMatch({ lunch -> lunch.items.stream().allMatch({ item -> item.price == OptionalInt.empty() }) })
     }
 
-    def "Bangkok kitchen parser skips items where it cannot extract a title and a description"(){
-        given: "A test file where the first item of first lunch is malformed"
-        def contents = this.getClass().getResource("/testData/bkk/valid_with_malformed_first_item.html").text
-        and: "A Bangkok Kitchen Parser"
-        def dateCalculator = new DateCalculator(LocalDate.now())
-        def parser = new BangkokKitchen(dateCalculator)
-        when: "The file is parsed"
-        def lunches = parser.parse(contents)
-        then: "The results should start from the second item"
-        def firstItem = lunches.first().items.first()
-        firstItem.title.startsWith("B, ")
-    }
 }

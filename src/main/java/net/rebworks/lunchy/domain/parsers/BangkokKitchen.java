@@ -2,6 +2,8 @@ package net.rebworks.lunchy.domain.parsers;
 
 import net.rebworks.lunchy.domain.Parser;
 import net.rebworks.lunchy.domain.date.DateCalculator;
+import net.rebworks.lunchy.domain.parsers.util.SwedishTitleDescriptionSplitter;
+import net.rebworks.lunchy.domain.parsers.util.SwedishTitleDescriptionSplitter.TitleAndDescription;
 import net.rebworks.lunchy.dto.ImmutableLunch.Builder;
 import net.rebworks.lunchy.dto.Lunch;
 import net.rebworks.lunchy.dto.LunchItem;
@@ -23,11 +25,13 @@ import java.util.regex.Pattern;
 public class BangkokKitchen implements Parser {
 
     private final DateCalculator dateCalculator;
+    private final SwedishTitleDescriptionSplitter titleDescriptionSplitter;
     private final Pattern pricePattern = Pattern.compile(".*Endast (\\d+) kr.*");
 
     @Inject
-    public BangkokKitchen(final DateCalculator dateCalculator) {
+    public BangkokKitchen(final DateCalculator dateCalculator, final SwedishTitleDescriptionSplitter titleDescriptionSplitter) {
         this.dateCalculator = dateCalculator;
+        this.titleDescriptionSplitter = titleDescriptionSplitter;
     }
 
     @Override
@@ -68,9 +72,11 @@ public class BangkokKitchen implements Parser {
     private Optional<LunchItem> parseLunchItem(final OptionalInt price, final Element child) {
         final String[] parts = child.text().split("\\.", 2);
         if (parts.length != 2) return Optional.empty();
+        final TitleAndDescription titleAndDescription = titleDescriptionSplitter.split(parts[0]);
+        final String description = parts[1];
         return Optional.of(LunchItem.builder()
-                                    .title(parts[0])
-                                    .description(parts[1])
+                                    .title(titleAndDescription.getTitle())
+                                    .description(titleAndDescription.getFormattedDescription().map(d -> d + ". " + description).orElse(description))
                                     .price(price)
                                     .build());
     }
