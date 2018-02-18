@@ -44,6 +44,6 @@ public class Silvis implements Parser {
         final String rawText = element.text().trim();
         if (rawText.length() == 0) return Stream.empty();
         final TitleAndDescription split = splitter.split(rawText);
-        return Stream.of(LunchItem.builder().title(split.getTitle()).description(split.getDescription()).build());
+        return Stream.of(LunchItem.builder().title(split.getTitle()).description(split.getFormattedDescription()).build());
     }
 }

@@ -28,6 +28,10 @@ public class SwedishTitleDescriptionSplitter {
             return Optional.ofNullable(description);
         }
 
+        public Optional<String> getFormattedDescription() {
+            return getDescription().map(d -> prefix + " " + d);
+        }
+
         public static TitleAndDescription from(final String prefix, final String[] split) {
             if (split.length == 1) {
                 return new TitleAndDescription(prefix, split[0].trim());
@@ -46,7 +50,7 @@ public class SwedishTitleDescriptionSplitter {
             this.pattern = Pattern.compile(patternText);
         }
 
-        public TitleAndDescription split(final String title){
+        public TitleAndDescription split(final String title) {
             final String[] split = pattern.split(title, 2);
             final String prefix = patternText.trim(); // TODO: Capitalise
             return TitleAndDescription.from(prefix, split);
