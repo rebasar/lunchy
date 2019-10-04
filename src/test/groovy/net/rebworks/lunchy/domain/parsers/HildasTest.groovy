@@ -16,8 +16,7 @@ class HildasTest extends Specification {
         def lunches = parser.parse(contents)
         then: "The resulting file should contain correct information"
         lunches.size() == 5
-        lunches.stream().allMatch({ lunch -> lunch.items.size() == 4 })
-        lunches.stream().allMatch({ lunch -> lunch.items.stream().allMatch({ item -> !item.price.present }) })
+        lunches.stream().allMatch({ lunch -> lunch.items.size() >= 5 })
     }
 
 }
