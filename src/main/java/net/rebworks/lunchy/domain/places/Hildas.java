@@ -34,7 +34,7 @@ public class Hildas implements Place {
 
     @Override
     public URI getWebsite() {
-        return URI.create("https://hildasrestaurang.se/se/lunch-meny/");
+        return URI.create("http://hildas.kvartersmenyn.se/");
     }
 
     @Override
