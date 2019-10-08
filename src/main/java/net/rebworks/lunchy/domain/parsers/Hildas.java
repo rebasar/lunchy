@@ -1,11 +1,20 @@
 package net.rebworks.lunchy.domain.parsers;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.inject.Inject;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import net.rebworks.lunchy.domain.Parser;
 import net.rebworks.lunchy.domain.date.DateCalculator;
+import net.rebworks.lunchy.domain.parsers.hildas.Container;
+import net.rebworks.lunchy.domain.parsers.hildas.DaysMenu;
+import net.rebworks.lunchy.domain.parsers.hildas.Menu;
 import net.rebworks.lunchy.dto.Lunch;
 import net.rebworks.lunchy.dto.LunchItem;
 import org.json.JSONArray;
@@ -26,20 +35,32 @@ public class Hildas implements Parser {
     List<Lunch> lunches = new ArrayList<>();
 
 
-    JSONObject jsonObject = new JSONObject(input);
+    ObjectMapper objectMapper = new ObjectMapper();
 
+    try {
+      JsonNode daysMenu = objectMapper.readTree(input);
 
-    JSONArray menu =  ((JSONArray) ((JSONObject) jsonObject.get("acf")).get("days"));
+      if (daysMenu.has("acf")){
 
-    menu.forEach(day -> lunches.add(Lunch.builder().validFrom(LocalDate.now()).validUntil(LocalDate.now().plusDays(1)).
-        addAllItems(getLunchItems((JSONObject) day)).build()));
+        Container dm = objectMapper.treeToValue(daysMenu.get("acf"), Container.class);
 
-    return lunches;
+        dm.days.forEach(day -> lunches.add(Lunch.builder().
+                validFrom(dateCalculator.getDayOfWeek(dateCalculator.parseDayOfWeekOrToday(day.day))).
+                validUntil(dateCalculator.getDayOfWeek(dateCalculator.parseDayOfWeekOrToday(day.day)).plusDays(1)).
+                addAllItems(getLunchItems(day.menu)).build()));
+
+        return lunches;
+      }
+
+    } catch (IOException e) {
+      return Collections.emptyList();
+    }
+    return Collections.emptyList();
   }
 
-  private List<LunchItem> getLunchItems(JSONObject dayMenu){
+  private List<LunchItem> getLunchItems(List<Menu> menus){
     List<LunchItem> items = new ArrayList<>();
-    dayMenu.getJSONArray("menu").forEach(title -> items.add(LunchItem.builder().title(((JSONObject)(title)).get("text").toString()).build()));
+    menus.forEach(title -> items.add(LunchItem.builder().title(title.title).description(title.text).build()));
     return items;
   }
 
