@@ -1,14 +1,15 @@
 package net.rebworks.lunchy.domain.places;
 
+import net.rebworks.lunchy.domain.Place;
+import net.rebworks.lunchy.resources.LunchResource;
+
+import javax.inject.Inject;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.UriInfo;
 import java.net.URI;
 import java.util.Arrays;
 import java.util.SortedSet;
 import java.util.TreeSet;
-import javax.inject.Inject;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.UriInfo;
-import net.rebworks.lunchy.domain.Place;
-import net.rebworks.lunchy.resources.LunchResource;
 
 public class Hildas implements Place {
 

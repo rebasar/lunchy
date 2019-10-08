@@ -1,24 +1,19 @@
 package net.rebworks.lunchy.domain.parsers;
 
-import java.io.IOException;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import javax.inject.Inject;
-
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.rebworks.lunchy.domain.Parser;
 import net.rebworks.lunchy.domain.date.DateCalculator;
 import net.rebworks.lunchy.domain.parsers.hildas.Container;
-import net.rebworks.lunchy.domain.parsers.hildas.DaysMenu;
 import net.rebworks.lunchy.domain.parsers.hildas.Menu;
 import net.rebworks.lunchy.dto.Lunch;
 import net.rebworks.lunchy.dto.LunchItem;
-import org.json.JSONArray;
-import org.json.JSONObject;
+
+import javax.inject.Inject;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Hildas implements Parser {
 
