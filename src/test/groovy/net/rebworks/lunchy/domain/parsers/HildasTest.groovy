@@ -19,4 +19,30 @@ class HildasTest extends Specification {
         lunches.stream().allMatch({ lunch -> lunch.items.size() == 4 })
     }
 
+
+    def "Hildas parser returns empty list on missing menu element"() {
+        given: "A test file with missing content"
+        def contents = this.getClass().getResource("/testData/hildas/invalid_missing_menu_element.json").text
+        and: "A Hildas Parser"
+        def dateCalculator = new DateCalculator(LocalDate.now())
+        def parser = new Hildas(dateCalculator)
+        when: "The file is parsed"
+        def lunches = parser.parse(contents)
+        then: "The result should be empty"
+        lunches.size() == 0
+    }
+
+    def "Hildas parser returns empty list on lunch items"() {
+        given: "A test file with missing content"
+        def contents = this.getClass().getResource("/testData/hildas/invalid_array_as_input.json").text
+        and: "A Hildas Parser"
+        def dateCalculator = new DateCalculator(LocalDate.now())
+        def parser = new Hildas(dateCalculator)
+        when: "The file is parsed"
+        def lunches = parser.parse(contents)
+        then: "The result should be empty"
+        lunches.size() == 0
+    }
+
+
 }

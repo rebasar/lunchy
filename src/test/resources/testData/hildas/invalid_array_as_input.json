@@ -1,0 +1,218 @@
+[
+  {
+    "id": 2199,
+    "date": "2019-10-04T15:21:38",
+    "date_gmt": "2019-10-04T13:21:38",
+    "guid": {
+      "rendered": "https:\/\/api.hildasrestaurang.se\/?post_type=lunch&#038;p=2199"
+    },
+    "modified": "2019-10-04T15:20:49",
+    "modified_gmt": "2019-10-04T13:20:49",
+    "slug": "vecka41",
+    "status": "publish",
+    "type": "lunch",
+    "link": "https:\/\/api.hildasrestaurang.se\/lunch\/vecka41\/",
+    "title": {
+      "rendered": "Vecka 41 meny"
+    },
+    "content": {
+      "rendered": "",
+      "protected": false
+    },
+    "featured_media": 0,
+    "template": "",
+    "acf": {
+      "week": "41",
+      "days": [
+        {
+          "day": "monday",
+          "category": "Indiskt",
+          "menu": [
+            {
+              "title": "Lammk\u00f6tt",
+              "text": "Het indiskt stekt lammf\u00e4rs",
+              "allergies_icon": ""
+            },
+            {
+              "title": "Kyckling",
+              "text": "Kyckling Tikka Masala",
+              "allergies_icon": ""
+            },
+            {
+              "title": "Veganskt",
+              "text": "Vegansk pakora",
+              "allergies_icon": [
+                "gluten"
+              ]
+            },
+            {
+              "title": "Tillbeh\u00f6r",
+              "text": "Kokt ris, Hildas naanbr\u00f6d, indisk gurksallad, rostad kik\u00e4rtssallad, mynta- och limeyoghurt, \r\nmajssallad smaksatt med chili och koriander",
+              "allergies_icon": ""
+            }
+          ]
+        },
+        {
+          "day": "tuesday",
+          "category": "Italienskt",
+          "menu": [
+            {
+              "title": "Kyckling",
+              "text": "\u00d6rtstekt kycklingfil\u00e9",
+              "allergies_icon": ""
+            },
+            {
+              "title": "Fl\u00e4skk\u00f6tt",
+              "text": "Vitl\u00f6ksmarinerad fl\u00e4skfil\u00e9",
+              "allergies_icon": ""
+            },
+            {
+              "title": "Vegetariskt",
+              "text": "Vegetarisk Chevr\u00e9- och spenatlasagne",
+              "allergies_icon": [
+                "egg",
+                "lactose",
+                "milk-protein",
+                "gluten"
+              ]
+            },
+            {
+              "title": "Tillbeh\u00f6r",
+              "text": "Kr\u00e4mig svamprisotto, r\u00f6dvinss\u00e5s, pastasallad smaksatt med soltorkad tomatpesto, \r\nmarinerade oliver, dressad vitk\u00e5lssallad, stekta marinerade gr\u00f6nsaker",
+              "allergies_icon": ""
+            }
+          ]
+        },
+        {
+          "day": "wednesday",
+          "category": "Franskt",
+          "menu": [
+            {
+              "title": "N\u00f6tk\u00f6tt",
+              "text": "Pepparstek",
+              "allergies_icon": ""
+            },
+            {
+              "title": "Fisk",
+              "text": "Bouillabaissegryta med musslor",
+              "allergies_icon": ""
+            },
+            {
+              "title": "Vegetariskt",
+              "text": "Vegetarisk sm\u00f6rdegsrulle med r\u00f6dbetor",
+              "allergies_icon": [
+                "egg",
+                "lactose",
+                "milk-protein",
+                "gluten"
+              ]
+            },
+            {
+              "title": "Tillbeh\u00f6r",
+              "text": "Rostad potatis, gr\u00f6npeppars\u00e5s, stekt marinerad broccoli, bearnaise, vitl\u00f6ksbr\u00f6d, \r\nsaffransaioli, f\u00e4nk\u00e5lssallad, timjansrostad morotssallad",
+              "allergies_icon": ""
+            }
+          ]
+        },
+        {
+          "day": "thursday",
+          "category": "Svenskt",
+          "menu": [
+            {
+              "title": "Kalvk\u00f6tt",
+              "text": "Wallenbergare",
+              "allergies_icon": [
+                "egg",
+                "lactose",
+                "milk-protein",
+                "gluten"
+              ]
+            },
+            {
+              "title": "Fisk",
+              "text": "Pocherad fisk med kr\u00e4fts\u00e5s och dill",
+              "allergies_icon": [
+                "lactose",
+                "milk-protein"
+              ]
+            },
+            {
+              "title": "Vegetariskt",
+              "text": "Vegetarisk broccolipaj",
+              "allergies_icon": [
+                "egg",
+                "lactose",
+                "milk-protein",
+                "gluten"
+              ]
+            },
+            {
+              "title": "Tillbeh\u00f6r",
+              "text": "Potatismos, gr\u00f6na \u00e4rtor, gr\u00e4dds\u00e5s, pressgurka, lingonsylt, \u00f6rtcr\u00e8me, dressad blomk\u00e5lssallad, matvetesallad med paprika och gr\u00e4sl\u00f6k, r\u00e5rivna mor\u00f6tter",
+              "allergies_icon": ""
+            }
+          ]
+        },
+        {
+          "day": "friday",
+          "category": "Korean Fusion",
+          "menu": [
+            {
+              "title": "Fl\u00e4skk\u00f6tt",
+              "text": "Hoisinglacerad fl\u00e4sksida\r\n\r\n",
+              "allergies_icon": [
+                "gluten"
+              ]
+            },
+            {
+              "title": "N\u00f6tk\u00f6tt",
+              "text": "Biff Bulgogi",
+              "allergies_icon": ""
+            },
+            {
+              "title": "Veganskt",
+              "text": "Veganska fritters med v\u00e5rl\u00f6k",
+              "allergies_icon": [
+                "gluten"
+              ]
+            },
+            {
+              "title": "Tillbeh\u00f6r",
+              "text": "Kokt ris, kimchi, wasabislaw, srirachacr\u00e8me, sesamdressad gurksallad, chilipicklad r\u00f6dl\u00f6k, gari, steamed buns",
+              "allergies_icon": ""
+            }
+          ]
+        }
+      ]
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https:\/\/api.hildasrestaurang.se\/wp-json\/wp\/v2\/lunch\/2199"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https:\/\/api.hildasrestaurang.se\/wp-json\/wp\/v2\/lunch"
+        }
+      ],
+      "about": [
+        {
+          "href": "https:\/\/api.hildasrestaurang.se\/wp-json\/wp\/v2\/types\/lunch"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https:\/\/api.hildasrestaurang.se\/wp-json\/wp\/v2\/media?parent=2199"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https:\/\/api.w.org\/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

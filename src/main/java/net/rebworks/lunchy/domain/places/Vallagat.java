@@ -11,14 +11,14 @@ import java.util.Arrays;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-public class Hildas implements Place {
+public class Vallagat implements Place {
 
-    public static final String NAME = "Hildas";
-    private static final TreeSet<String> ALIASES = new TreeSet<>(Arrays.asList("hildas", "Hildas", "hld"));
+    public static final String NAME = "Vallagat";
+    private static final TreeSet<String> ALIASES = new TreeSet<>(Arrays.asList("Vallagat", "vallagat", "valagat"));
     private final UriInfo uriInfo;
 
     @Inject
-    public Hildas(@Context final UriInfo uriInfo) {
+    public Vallagat(@Context final UriInfo uriInfo) {
         this.uriInfo = uriInfo;
     }
 
@@ -34,7 +34,7 @@ public class Hildas implements Place {
 
     @Override
     public URI getWebsite() {
-        return URI.create("https://api.hildasrestaurang.se/wp-json/wp/v2/lunch?per_page=1&orderBy=publish_date");
+        return URI.create("http://www.vallagat.se/lunchmeny/");
     }
 
     @Override
