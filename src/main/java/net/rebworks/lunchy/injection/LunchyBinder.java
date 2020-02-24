@@ -67,5 +67,8 @@ public class LunchyBinder extends AbstractBinder {
         bind(BangkokKitchen.class).named(BangkokKitchen.NAME).to(Place.class);
         bind(Kok17.class).named(Kok17.NAME).to(Place.class);
         bind(AHerefordBeefstouw.class).named(AHerefordBeefstouw.NAME).to(Place.class);
+        bind(Hildas.class).named(Hildas.NAME).to(Place.class);
+        bind(Aptigarden.class).named(Aptigarden.NAME).to(Place.class);
+        bind(Vallagat.class).named(Vallagat.NAME).to(Place.class);
     }
 }
