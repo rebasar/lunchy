@@ -55,6 +55,9 @@ public class LunchyBinder extends AbstractBinder {
         bind(net.rebworks.lunchy.domain.parsers.Kok17.class).named(Kok17.NAME).to(Parser.class);
         bind(net.rebworks.lunchy.domain.parsers.AHerefordBeefstouw.class).named(AHerefordBeefstouw.NAME)
                                                                          .to(Parser.class);
+        bind(net.rebworks.lunchy.domain.parsers.Hildas.class).named(Hildas.NAME).to(Parser.class);
+        bind(net.rebworks.lunchy.domain.parsers.Aptigarden.class).named(Aptigarden.NAME).to(Parser.class);
+        bind(net.rebworks.lunchy.domain.parsers.Vallagat.class).named(Vallagat.NAME).to(Parser.class);
     }
 
     private void bindPlaces() {
