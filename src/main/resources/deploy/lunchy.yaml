@@ -1,0 +1,12 @@
+server:
+  applicationContextPath: ${LUNCHY_CONTEXT_PATH:/lunch}
+  applicationConnectors:
+    - type: http
+      bindHost: 127.0.0.1
+      port: ${LUNCHY_APPLICATION_PORT:8000}
+  adminConnectors:
+    - type: http
+      bindHost: 127.0.0.1
+      port: ${LUNCHY_ADMIN_PORT:8081}
+jerseyClient:
+  timeout: ${LUNCHY_JERSEY_CLIENT_TIMEOUT:1500ms}

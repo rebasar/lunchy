@@ -40,40 +40,34 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>2.3</version>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>1.0.0</version>
                 <configuration>
-                    <createDependencyReducedPom>true</createDependencyReducedPom>
-                    <filters>
-                        <filter>
-                            <artifact>*:*</artifact>
-                            <excludes>
-                                <exclude>META-INF/*.SF</exclude>
-                                <exclude>META-INF/*.DSA</exclude>
-                                <exclude>META-INF/*.RSA</exclude>
-                            </excludes>
-                        </filter>
-                    </filters>
+                    <from>
+                        <image>openjdk:11-jre-slim</image>
+                    </from>
+                    <to>
+                        <image>${env.LUNCHY_DOCKER_IMAGE}</image>
+                        <tags>
+                            <tag>${project.version}</tag>
+                        </tags>
+                        <auth>
+                            <username>${env.DOCKER_REPOSITORY_USERNAME}</username>
+                            <password>${env.DOCKER_REPOSITORY_PASSWORD}</password>
+                        </auth>
+                    </to>
+                    <container>
+                        <mainClass>net.rebworks.lunchy.LunchyApplication</mainClass>
+                        <args>
+                            <arg>server</arg>
+                            <arg>/lunchy.yaml</arg>
+                        </args>
+                        <ports>
+                            <port>${env.LUNCHY_PORT:8080}</port>
+                        </ports>
+                    </container>
                 </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <transformers>
-                                <transformer
-                                        implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
-                                <transformer
-                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>net.rebworks.lunchy.LunchyApplication</mainClass>
-                                </transformer>
-                            </transformers>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
