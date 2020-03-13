@@ -64,7 +64,7 @@
                             <arg>/lunchy.yaml</arg>
                         </args>
                         <ports>
-                            <port>${env.LUNCHY_PORT:8080}</port>
+                            <port>${env.LUNCHY_PORT}</port>
                         </ports>
                     </container>
                 </configuration>
