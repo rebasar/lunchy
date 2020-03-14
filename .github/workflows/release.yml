@@ -26,4 +26,4 @@ jobs:
           LUNCHY_DOCKER_IMAGE: docker.pkg.github.com/${GITHUB_REPOSITORY}/lunchy
           LUNCHY_PORT: 8080
           DOCKER_REPOSITORY_USERNAME: ${{ secrets.RELEASE_USERNAME }}
-          DOCKER_REPOSITORY_PASSWORD: ${{ secrets.RELEASE_KEY }}
+          DOCKER_REPOSITORY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
