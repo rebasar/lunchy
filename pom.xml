@@ -45,7 +45,7 @@
                 <version>1.0.0</version>
                 <configuration>
                     <from>
-                        <image>openjdk:11-jre-slim</image>
+                        <image>gcr.io/distroless/java:11</image>
                     </from>
                     <to>
                         <image>${env.LUNCHY_DOCKER_IMAGE}</image>
