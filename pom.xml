@@ -111,6 +111,6 @@
 
     </dependencies>
     <properties>
-        <dropwizard.version>1.0.5</dropwizard.version>
+        <dropwizard.version>2.0.2</dropwizard.version>
     </properties>
 </project>
