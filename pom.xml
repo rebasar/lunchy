@@ -95,7 +95,7 @@
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-core</artifactId>
-            <version>10.1.4.Final</version>
+            <version>10.1.5.Final</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
