@@ -4,6 +4,7 @@ import net.rebworks.lunchy.annotations.Cached;
 import net.rebworks.lunchy.annotations.Default;
 import net.rebworks.lunchy.domain.Lunches;
 import org.infinispan.Cache;
+import org.infinispan.configuration.cache.ConfigurationBuilder;
 import org.infinispan.manager.DefaultCacheManager;
 
 import javax.inject.Inject;
@@ -28,7 +29,7 @@ public class CachingParserService implements ParserService {
         if (cacheManager.cacheExists("lunches")) {
             return cacheManager.getCache("lunches");
         } else {
-            return cacheManager.createCache("lunches", cacheManager.getDefaultCacheConfiguration());
+            return cacheManager.createCache("lunches", new ConfigurationBuilder().simpleCache(true).build(true));
         }
     }
 
