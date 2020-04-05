@@ -21,7 +21,7 @@ public class CachingParserService implements ParserService {
     @Inject
     public CachingParserService(@Default final DefaultParserService delegate, final DefaultCacheManager cacheManager) {
         this.delegate = delegate;
-        this.cache = cacheManager.getCache("lunches");
+        this.cache = cacheManager.getCache("lunches", true);
     }
 
     @Override
