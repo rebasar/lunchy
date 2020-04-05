@@ -21,7 +21,15 @@ public class CachingParserService implements ParserService {
     @Inject
     public CachingParserService(@Default final DefaultParserService delegate, final DefaultCacheManager cacheManager) {
         this.delegate = delegate;
-        this.cache = cacheManager.getCache("lunches", true);
+        this.cache = getOrCreateCache(cacheManager);
+    }
+
+    private Cache<String, Lunches> getOrCreateCache(final DefaultCacheManager cacheManager) {
+        if (cacheManager.cacheExists("lunches")) {
+            return cacheManager.getCache("lunches");
+        } else {
+            return cacheManager.createCache("lunches", cacheManager.getDefaultCacheConfiguration());
+        }
     }
 
     @Override
