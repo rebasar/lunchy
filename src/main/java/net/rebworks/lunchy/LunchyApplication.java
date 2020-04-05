@@ -3,6 +3,9 @@ package net.rebworks.lunchy;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import io.dropwizard.Application;
 import io.dropwizard.client.JerseyClientBuilder;
+import io.dropwizard.configuration.EnvironmentVariableSubstitutor;
+import io.dropwizard.configuration.SubstitutingSourceProvider;
+import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import net.rebworks.lunchy.domain.io.HttpClient;
 import net.rebworks.lunchy.injection.LunchyBinder;
@@ -14,6 +17,12 @@ import java.text.DateFormat;
 public class LunchyApplication extends Application<LunchyConfiguration> {
     public static void main(final String[] args) throws Exception {
         new LunchyApplication().run(args);
+    }
+
+    @Override
+    public void initialize(final Bootstrap<LunchyConfiguration> bootstrap) {
+        bootstrap.setConfigurationSourceProvider(new SubstitutingSourceProvider(bootstrap.getConfigurationSourceProvider(),
+                                                                                new EnvironmentVariableSubstitutor()));
     }
 
     @Override
